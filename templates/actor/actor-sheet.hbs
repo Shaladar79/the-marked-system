@@ -63,7 +63,7 @@
   <!-- BODY -->
   <section class="sheet-body">
     <div class="tab" data-group="primary" data-tab="main">
-      <!-- MAIN TAB: Attributes & (later) Status -->
+      <!-- MAIN TAB: Attributes & Status -->
       <section class="main-grid">
         <!-- Attributes -->
         <section class="attributes-section">
@@ -147,10 +147,75 @@
           </div>
         </section>
 
-        <!-- STATUS (placeholder for now) -->
+        <!-- STATUS -->
         <section class="status-section">
           <h2>Status</h2>
-          <p>TODO: Status resources (Life, Mana, etc.) will go here.</p>
+
+          <div class="status-grid">
+            <!-- Vitality -->
+            <div class="field">
+              <label>{{system.status.vitality.label}}</label>
+              <input type="number" name="system.status.vitality.value" value="{{system.status.vitality.value}}" />
+              <span>/</span>
+              <input type="number" name="system.status.vitality.max" value="{{system.status.vitality.max}}" />
+            </div>
+
+            <!-- Mana -->
+            <div class="field">
+              <label>{{system.status.mana.label}}</label>
+              <input type="number" name="system.status.mana.value" value="{{system.status.mana.value}}" />
+              <span>/</span>
+              <input type="number" name="system.status.mana.max" value="{{system.status.mana.max}}" />
+            </div>
+
+            <!-- Stamina -->
+            <div class="field">
+              <label>{{system.status.stamina.label}}</label>
+              <input type="number" name="system.status.stamina.value" value="{{system.status.stamina.value}}" />
+              <span>/</span>
+              <input type="number" name="system.status.stamina.max" value="{{system.status.stamina.max}}" />
+            </div>
+
+            <!-- Defense -->
+            <div class="field">
+              <label>{{system.status.defense.label}}</label>
+              <input type="number" name="system.status.defense.value" value="{{system.status.defense.value}}" />
+            </div>
+
+            <!-- Reaction -->
+            <div class="field">
+              <label>{{system.status.reaction.label}}</label>
+              <input type="number" name="system.status.reaction.value" value="{{system.status.reaction.value}}" />
+            </div>
+
+            <!-- Trauma -->
+            <div class="field">
+              <label>{{system.status.trauma.label}}</label>
+              <input type="number" name="system.status.trauma.value" value="{{system.status.trauma.value}}" />
+              <span>/</span>
+              <input type="number" name="system.status.trauma.max" value="{{system.status.trauma.max}}" />
+            </div>
+
+            <!-- Pace -->
+            <div class="field">
+              <label>{{system.status.pace.label}}</label>
+              <input type="number" name="system.status.pace.value" value="{{system.status.pace.value}}" />
+            </div>
+
+            <!-- Armor -->
+            <div class="field">
+              <label>{{system.status.armor.label}}</label>
+              <input type="number" name="system.status.armor.value" value="{{system.status.armor.value}}" />
+              <span>/</span>
+              <input type="number" name="system.status.armor.max" value="{{system.status.armor.max}}" />
+            </div>
+
+            <!-- Shielding -->
+            <div class="field">
+              <label>{{system.status.shielding.label}}</label>
+              <input type="number" name="system.status.shielding.value" value="{{system.status.shielding.value}}" />
+            </div>
+          </div>
         </section>
       </section>
     </div>
