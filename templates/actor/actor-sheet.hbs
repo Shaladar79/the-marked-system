@@ -63,8 +63,96 @@
   <!-- BODY -->
   <section class="sheet-body">
     <div class="tab" data-group="primary" data-tab="main">
-      <!-- Later: Attributes & Status -->
-      <p>TODO: Stats and Marks go here.</p>
+      <!-- MAIN TAB: Attributes & (later) Status -->
+      <section class="main-grid">
+        <!-- Attributes -->
+        <section class="attributes-section">
+          <h2>Attributes</h2>
+
+          <div class="attribute-groups flexrow">
+            <!-- BODY -->
+            <div class="attribute-group">
+              <h3>Body</h3>
+              <div class="field">
+                <label>{{system.attributes.body.label}}</label>
+                <input type="number" name="system.attributes.body.value" value="{{system.attributes.body.value}}" />
+              </div>
+              <div class="field">
+                <label>{{system.attributes.body.sub1.label}}</label>
+                <input type="number" name="system.attributes.body.sub1.value" value="{{system.attributes.body.sub1.value}}" />
+              </div>
+              <div class="field">
+                <label>{{system.attributes.body.sub2.label}}</label>
+                <input type="number" name="system.attributes.body.sub2.value" value="{{system.attributes.body.sub2.value}}" />
+              </div>
+              <div class="field">
+                <label>{{system.attributes.body.sub3.label}}</label>
+                <input type="number" name="system.attributes.body.sub3.value" value="{{system.attributes.body.sub3.value}}" />
+              </div>
+              <div class="field">
+                <label>{{system.attributes.body.sub4.label}}</label>
+                <input type="number" name="system.attributes.body.sub4.value" value="{{system.attributes.body.sub4.value}}" />
+              </div>
+            </div>
+
+            <!-- MIND -->
+            <div class="attribute-group">
+              <h3>Mind</h3>
+              <div class="field">
+                <label>{{system.attributes.mind.label}}</label>
+                <input type="number" name="system.attributes.mind.value" value="{{system.attributes.mind.value}}" />
+              </div>
+              <div class="field">
+                <label>{{system.attributes.mind.sub1.label}}</label>
+                <input type="number" name="system.attributes.mind.sub1.value" value="{{system.attributes.mind.sub1.value}}" />
+              </div>
+              <div class="field">
+                <label>{{system.attributes.mind.sub2.label}}</label>
+                <input type="number" name="system.attributes.mind.sub2.value" value="{{system.attributes.mind.sub2.value}}" />
+              </div>
+              <div class="field">
+                <label>{{system.attributes.mind.sub3.label}}</label>
+                <input type="number" name="system.attributes.mind.sub3.value" value="{{system.attributes.mind.sub3.value}}" />
+              </div>
+              <div class="field">
+                <label>{{system.attributes.mind.sub4.label}}</label>
+                <input type="number" name="system.attributes.mind.sub4.value" value="{{system.attributes.mind.sub4.value}}" />
+              </div>
+            </div>
+
+            <!-- SOUL -->
+            <div class="attribute-group">
+              <h3>Soul</h3>
+              <div class="field">
+                <label>{{system.attributes.soul.label}}</label>
+                <input type="number" name="system.attributes.soul.value" value="{{system.attributes.soul.value}}" />
+              </div>
+              <div class="field">
+                <label>{{system.attributes.soul.sub1.label}}</label>
+                <input type="number" name="system.attributes.soul.sub1.value" value="{{system.attributes.soul.sub1.value}}" />
+              </div>
+              <div class="field">
+                <label>{{system.attributes.soul.sub2.label}}</label>
+                <input type="number" name="system.attributes.soul.sub2.value" value="{{system.attributes.soul.sub2.value}}" />
+              </div>
+              <div class="field">
+                <label>{{system.attributes.soul.sub3.label}}</label>
+                <input type="number" name="system.attributes.soul.sub3.value" value="{{system.attributes.soul.sub3.value}}" />
+              </div>
+              <div class="field">
+                <label>{{system.attributes.soul.sub4.label}}</label>
+                <input type="number" name="system.attributes.soul.sub4.value" value="{{system.attributes.soul.sub4.value}}" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- STATUS (placeholder for now) -->
+        <section class="status-section">
+          <h2>Status</h2>
+          <p>TODO: Status resources (Life, Mana, etc.) will go here.</p>
+        </section>
+      </section>
     </div>
 
     <div class="tab" data-group="primary" data-tab="inventory">
