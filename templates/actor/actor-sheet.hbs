@@ -1,1 +1,49 @@
+<form class="marked sheet actor" autocomplete="off">
+  <!-- HEADER -->
+  <header class="sheet-header flexrow">
+    <div class="profile">
+      <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+    </div>
+
+    <div class="header-fields">
+      <div class="name-row">
+        <input name="name" type="text" value="{{actor.name}}" placeholder="Name" />
+      </div>
+
+      <div class="meta-row flexrow">
+        <div class="field">
+          <label>Type</label>
+          <input type="text" value="{{actor.type}}" disabled />
+        </div>
+        <div class="field">
+          <label>Rank</label>
+          <input type="text" name="system.details.rank" value="{{system.details.rank}}" />
+        </div>
+        <div class="field">
+          <label>Mark</label>
+          <input type="text" name="system.details.mark" value="{{system.details.mark}}" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TABS -->
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="main">Main</a>
+    <a class="item" data-tab="inventory">Inventory</a>
+  </nav>
+
+  <!-- BODY -->
+  <section class="sheet-body">
+    <div class="tab" data-group="primary" data-tab="main">
+      <!-- Later: attributes (Body/Mind/Soul or whatever you decide) -->
+      <p>TODO: Stats and Marks go here.</p>
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="inventory">
+      <!-- Later: your item list -->
+      <p>TODO: Inventory list goes here.</p>
+    </div>
+  </section>
+</form>
 
