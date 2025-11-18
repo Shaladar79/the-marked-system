@@ -9,6 +9,9 @@
           "mark": "",
           "race": "",
           "background": ""
+          "currentSpirit": 0,
+          "spentSpirit": 0,
+          "totalSpirit": 0
         },
         "attributes": {
           "body": {
