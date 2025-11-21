@@ -22,3 +22,17 @@ MarkedConfig.ranks = {
   mythrite: "Mythrite",
   celestite:"Celestite"
 };
+
+MarkedConfig.races = {
+  human:       "Human",
+  etherean:    "Etherean",
+  mythrian:    "Mythrian",
+  anthozoan:   "Anthozoan",
+  sylvan:      "Sylvan",
+  sprite:      "Sprite",
+  auramine:    "Auramine",
+  draconian:   "Draconian",
+  embergiest:  "Embergiest",
+  earthen:     "Earthen",
+  prismatic:   "Prismatic"
+};
