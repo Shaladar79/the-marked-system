@@ -20,12 +20,8 @@ export class MarkedActorSheet extends ActorSheet {
   getData(options) {
     const context = super.getData(options);
 
-    // 🔹 This is the important bit:
-    // Foundry puts your document data under `data`,
-    // so copy `data.system` to top-level `system`
     context.system = context.data.system;
 
-    // You already had this:
     context.config = MarkedConfig;
 
     return context;
