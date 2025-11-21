@@ -1,7 +1,7 @@
 {{!-- templates/actors/parts/subparts/rankdrop.hbs --}}
 
 <div class="field rank-field">
-  <label>Rank</label>
+  <label>Rank (debug: {{system.details.rank}})</label>
   <select name="system.details.rank" data-dtype="String">
     {{selectOptions config.ranks selected=system.details.rank}}
   </select>
