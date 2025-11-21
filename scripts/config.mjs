@@ -2,27 +2,34 @@
 
 export const MarkedConfig = {};
 
-// Attribute categories
+// -------------------------------------
+// ATTRIBUTE CATEGORIES
+// -------------------------------------
 MarkedConfig.attributes = {
   body: { label: "Body" },
   mind: { label: "Mind" },
   soul: { label: "Soul" }
 };
 
-// 🔹 SIMPLE RANK MAP: key -> label
+// -------------------------------------
+// SIMPLE RANK MAP (key → label)
+// -------------------------------------
 MarkedConfig.ranks = {
-  normal:   "Normal",
-  quartz:   "Quartz",
-  topaz:    "Topaz",
-  garnet:   "Garnet",
-  emerald:  "Emerald",
-  sapphire: "Sapphire",
-  ruby:     "Ruby",
-  diamond:  "Diamond",
-  mythrite: "Mythrite",
-  celestite:"Celestite"
+  normal:    "Normal",
+  quartz:    "Quartz",
+  topaz:     "Topaz",
+  garnet:    "Garnet",
+  emerald:   "Emerald",
+  sapphire:  "Sapphire",
+  ruby:      "Ruby",
+  diamond:   "Diamond",
+  mythrite:  "Mythrite",
+  celestite: "Celestite"
 };
 
+// -------------------------------------
+// RACES (simple key → label)
+// -------------------------------------
 MarkedConfig.races = {
   human:       "Human",
   etherean:    "Etherean",
@@ -35,4 +42,23 @@ MarkedConfig.races = {
   embergiest:  "Embergiest",
   earthen:     "Earthen",
   prismatic:   "Prismatic"
+};
+
+// -------------------------------------
+// MYTHRIAN TRIBES
+// -------------------------------------
+MarkedConfig.mythrianTribes = {
+  lion: "Lion Tribe",
+  wolf: "Wolf Tribe",
+  bear: "Bear Tribe"
+};
+
+// -------------------------------------
+// DRACONIAN CLANS (placeholder names)
+// You can replace/expand these anytime.
+// -------------------------------------
+MarkedConfig.draconianClans = {
+  flame: "Flame Clan",
+  storm: "Storm Clan",
+  stone: "Stone Clan"
 };
