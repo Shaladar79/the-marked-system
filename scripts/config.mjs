@@ -9,16 +9,16 @@ MarkedConfig.attributes = {
   soul: { label: "Soul" }
 };
 
-// Rank list — clean, proper structure
+// 🔹 SIMPLE RANK MAP: key -> label
 MarkedConfig.ranks = {
-  normal:   { key: "normal",   label: "Normal" },
-  quartz:   { key: "quartz",   label: "Quartz" },
-  topaz:    { key: "topaz",    label: "Topaz" },
-  garnet:   { key: "garnet",   label: "Garnet" },
-  emerald:  { key: "emerald",  label: "Emerald" },
-  sapphire: { key: "sapphire", label: "Sapphire" },
-  ruby:     { key: "ruby",     label: "Ruby" },
-  diamond:  { key: "diamond",  label: "Diamond" },
-  mythrite: { key: "mythrite", label: "Mythrite" },
-  celestite:{ key: "celestite",label: "Celestite" }
+  normal:   "Normal",
+  quartz:   "Quartz",
+  topaz:    "Topaz",
+  garnet:   "Garnet",
+  emerald:  "Emerald",
+  sapphire: "Sapphire",
+  ruby:     "Ruby",
+  diamond:  "Diamond",
+  mythrite: "Mythrite",
+  celestite:"Celestite"
 };
