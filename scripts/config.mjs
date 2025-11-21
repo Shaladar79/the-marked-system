@@ -62,3 +62,24 @@ MarkedConfig.draconianClans = {
   storm: "Storm Clan",
   stone: "Stone Clan"
 };
+
+// -------------------------------------
+// BACKGROUNDS (simple key → label)
+// -------------------------------------
+MarkedConfig.backgrounds = {
+  farmer:        "Farmer",
+  hunter:        "Hunter",
+  merchant:      "Merchant",
+  scholar:       "Scholar",
+  soldier:       "Soldier",
+  blacksmith:    "Blacksmith",
+  sailor:        "Sailor",
+  noble:         "Noble",
+  street_urchin: "Street Urchin",
+  entertainer:   "Entertainer",
+  thief:         "Thief",
+  guard:         "Guard",
+  scribe:        "Scribe",
+  bounty_hunter: "Bounty Hunter",
+  explorer:      "Explorer"
+};
