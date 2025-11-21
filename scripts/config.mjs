@@ -15,20 +15,22 @@ MarkedConfig.attributes = {
 // ------------------------------
 // Rank List
 // ------------------------------
+// Keys are the stored values (system.details.rank)
+// "label" is what the user sees in the dropdown
 MarkedConfig.ranks = {
-  normal:   { label: "Normal" },
-  quartz:   { label: "Quartz" },
-  topaz:    { label: "Topaz" },
-  garnet:   { label: "Garnet" },
-  emerald:  { label: "Emerald" },
+  normal:   { label: "Normal"   },
+  quartz:   { label: "Quartz"   },
+  topaz:    { label: "Topaz"    },
+  garnet:   { label: "Garnet"   },
+  emerald:  { label: "Emerald"  },
   sapphire: { label: "Sapphire" },
-  ruby:     { label: "Ruby" },
-  diamond:  { label: "Diamond" },
+  ruby:     { label: "Ruby"     },
+  diamond:  { label: "Diamond"  },
   mythrite: { label: "Mythrite" },
-  celestite:{ label: "Celestite" }
+  celestite:{ label: "Celestite"}
 };
 
-// Later additions:
+// Later we can add:
 // MarkedConfig.races = { ... };
 // MarkedConfig.backgrounds = { ... };
 // MarkedConfig.marks = { ... };
