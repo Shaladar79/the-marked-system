@@ -35,13 +35,13 @@
   </select>
 </div>
 
-      <div class="field">
-        <label>Mark</label>
-        <input type="text"
-               name="system.details.mark"
-               value="{{system.details.mark}}" />
-      </div>
-    </div>
+     <div class="field rank-field">
+  <label>Rank</label>
+  <select name="system.details.rank" data-dtype="String">
+    {{selectOptions config.ranks selected=system.details.rank}}
+  </select>
+</div>
+
 
     {{!-- RACE / BACKGROUND (still text fields until we modularize them) --}}
     <div class="meta-row flexrow">
