@@ -27,14 +27,11 @@
       </div>
 
       {{!-- RANK DROPDOWN (modular partial) --}}
-      <div class="field rank-field">
+     <div class="field rank-field">
   <label>Rank</label>
+
   <select name="system.details.rank" data-dtype="String">
-    {{#select system.details.rank}}
-      {{#each config.ranks as |rank key|}}
-        <option value="{{key}}">{{rank.label}}</option>
-      {{/each}}
-    {{/select}}
+    {{selectOptions config.ranks selected=system.details.rank valueAttr="key" labelAttr="label"}}
   </select>
 </div>
 
