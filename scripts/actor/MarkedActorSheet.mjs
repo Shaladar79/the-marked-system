@@ -9,23 +9,20 @@ export class MarkedActorSheet extends ActorSheet {
       template: "systems/the-marked-system/templates/actors/actor-sheet.hbs",
       width: 900,
       height: 700,
-
-      // 🔹 TWO TAB GROUPS
       tabs: [
-        // TOP-LEVEL: Attributes & Status / Abilities
+        // Top-level tabs: "Attributes & Status" and "Abilities"
         {
           navSelector: ".sheet-tabs",
           contentSelector: ".sheet-body",
-          initial: "attrStatus"
+          initial: "attr-status"
         },
-        // SUBTABS: Attributes / Status (only active inside attrStatus)
+        // Inner subtabs inside the Attributes & Status tab
         {
-          navSelector: ".sheet-subtabs",
-          contentSelector: ".attributes-status-body",
+          navSelector: ".sub-tabs",
+          contentSelector: ".sub-body",
           initial: "attributes"
         }
       ],
-
       submitOnChange: true,
       submitOnClose: true
     });
@@ -34,10 +31,8 @@ export class MarkedActorSheet extends ActorSheet {
   getData(options) {
     const context = super.getData(options);
 
-    // ⬅️ Foundry V13: place system data where the template expects it
+    // Give partials direct access to system and config
     context.system = context.data.system;
-
-    // Expose config to templates
     context.config = MarkedConfig;
 
     return context;
@@ -46,15 +41,15 @@ export class MarkedActorSheet extends ActorSheet {
   activateListeners(html) {
     super.activateListeners(html);
 
-    // ---------- RACE-DEPENDENT FIELDS ----------
+    // ----- Race-dependent extra dropdowns -----
     const raceSelect = html.find('select[name="system.details.race"]');
-    const tribeField = html.find('.tribe-field'); // must exist in header.hbs
-    const clanField = html.find('.clan-field');   // must exist in header.hbs
+    const tribeField = html.find(".tribe-field");
+    const clanField  = html.find(".clan-field");
 
     const updateRaceDependentFields = () => {
       const race = raceSelect.val();
 
-      // Mythrian → show tribe field
+      // Mythrian → show tribe, hide clan
       if (race === "mythrian") {
         tribeField.show();
       } else {
@@ -62,7 +57,7 @@ export class MarkedActorSheet extends ActorSheet {
         this.object.update({ "system.details.tribe": "" });
       }
 
-      // Draconian → show clan field
+      // Draconian → show clan, hide tribe
       if (race === "draconian") {
         clanField.show();
       } else {
@@ -71,10 +66,10 @@ export class MarkedActorSheet extends ActorSheet {
       }
     };
 
-    // Initial update when sheet opens
+    // Initial state
     updateRaceDependentFields();
 
-    // Update live when race changes
-    raceSelect.on("change", () => updateRaceDependentFields());
+    // Live update when race changes
+    raceSelect.on("change", updateRaceDependentFields);
   }
 }
