@@ -2,7 +2,7 @@
 
 <div class="field rank-field">
   <label>Rank</label>
-  <select name="system.details.rank">
+  <select name="system.details.rank" data-dtype="String">
     {{#select system.details.rank}}
       {{#each config.ranks as |rank key|}}
         <option value="{{key}}">{{rank.label}}</option>
@@ -10,4 +10,3 @@
     {{/select}}
   </select>
 </div>
-
