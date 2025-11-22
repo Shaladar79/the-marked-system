@@ -64,6 +64,7 @@ export class MarkedActorSheet extends ActorSheet {
     const tribeField = html.find(".tribe-field");
     const clanField  = html.find(".clan-field");
 
+    // Show/hide tribe/clan based on race
     const updateRaceDependentFields = () => {
       const race = raceSelect.val();
 
@@ -84,7 +85,44 @@ export class MarkedActorSheet extends ActorSheet {
       }
     };
 
+    // Apply racial status values when the race changes
+    const applyRaceStatus = () => {
+      const raceKey = raceSelect.val();       // e.g. "human", "etherean"
+      if (!raceKey) return;
+
+      // Convert key → label, e.g. "human" → "Human"
+      const raceLabel  = MarkedConfig.races?.[raceKey] ?? raceKey;
+      const raceConfig = MarkedConfig.raceStatus?.[raceLabel];
+      if (!raceConfig || !raceConfig.status) return;
+
+      const update = {};
+
+      // Copy racial status into system.status.*
+      for (const [path, value] of Object.entries(raceConfig.status)) {
+        update[`system.status.${path}`] = value;
+      }
+
+      // Optionally set current to max for vitality / mana / stamina on selection
+      if (raceConfig.status["vitality.max"] !== undefined) {
+        update["system.status.vitality.value"] = raceConfig.status["vitality.max"];
+      }
+      if (raceConfig.status["mana.max"] !== undefined) {
+        update["system.status.mana.value"] = raceConfig.status["mana.max"];
+      }
+      if (raceConfig.status["stamina.max"] !== undefined) {
+        update["system.status.stamina.value"] = raceConfig.status["stamina.max"];
+      }
+
+      this.object.update(update);
+    };
+
+    // On initial render, just fix tribe/clan visibility
     updateRaceDependentFields();
-    raceSelect.on("change", updateRaceDependentFields);
+
+    // On change, update tribe/clan AND apply racial status
+    raceSelect.on("change", () => {
+      updateRaceDependentFields();
+      applyRaceStatus();
+    });
   }
 }
