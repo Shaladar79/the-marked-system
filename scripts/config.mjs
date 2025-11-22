@@ -319,3 +319,14 @@ MarkedConfig.raceAttributes = {
   }
 };
 
+// ------------------------------------------------------
+// Legacy aliases so old templates keep working
+// ------------------------------------------------------
+
+// Old names used in templates: config.tribes and config.clans
+MarkedConfig.tribes = MarkedConfig.mythrianTribes;
+MarkedConfig.clans  = MarkedConfig.draconianClans;
+
+// Old name used in templates: config.marksPurpose
+MarkedConfig.marksPurpose = MarkedConfig.markOfPurpose;
+
