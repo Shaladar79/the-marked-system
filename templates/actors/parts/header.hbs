@@ -2,7 +2,7 @@
 
 <header class="sheet-header">
 
-  {{!-- TOP ROW: Type ABOVE the portrait (no label) --}}
+  {{!-- TOP ROW: Type above portrait --}}
   <div class="header-top-row flexrow">
     <div class="type-field">
       <input type="text"
@@ -12,7 +12,7 @@
     </div>
   </div>
 
-  {{!-- MAIN ROW: Portrait + everything else --}}
+  {{!-- MAIN ROW: Portrait + all character details --}}
   <div class="header-main-row flexrow">
 
     {{!-- PORTRAIT --}}
@@ -23,10 +23,10 @@
            title="{{actor.name}}" />
     </div>
 
-    {{!-- RIGHT SIDE: Name, Rank, Race, Background, Spirit --}}
+    {{!-- RIGHT-SIDE FIELDS --}}
     <div class="header-fields">
 
-      {{!-- NAME --}}
+      {{!-- CHARACTER NAME --}}
       <div class="name-row">
         <input name="name"
                type="text"
@@ -34,26 +34,31 @@
                placeholder="Name" />
       </div>
 
-      {{!-- RANK / RACE / BACKGROUND --}}
+      {{!-- RANK / RACE / TRIBE / CLAN / BACKGROUND --}}
       <div class="meta-row flexrow">
 
-        {{!-- RANK via partial --}}
+        {{!-- Rank Dropdown --}}
         {{> "systems/the-marked-system/templates/actors/parts/subparts/rankdrop.hbs"}}
-        
-         {{!-- RACE via partial --}}
-       {{> "systems/the-marked-system/templates/actors/parts/subparts/racedrop.hbs"}}
 
-        {{!-- CLAN via partial --}}
-       {{> "systems/the-marked-system/templates/actors/parts/subparts/clandrop.hbs"}}
+        {{!-- Race Dropdown --}}
+        {{> "systems/the-marked-system/templates/actors/parts/subparts/racedrop.hbs"}}
 
-        {{!-- Tribe via partial --}}
-       {{> "systems/the-marked-system/templates/actors/parts/subparts/tribedrop.hbs"}}
+        {{!-- Mythrian Tribe (conditionally shown via JS) --}}
+        <div class="tribe-field">
+          {{> "systems/the-marked-system/templates/actors/parts/subparts/tribedrop.hbs"}}
+        </div>
 
-       {{!-- Background dropdown (already working) --}}
-      {{> "systems/the-marked-system/templates/actors/parts/subparts/backdrop.hbs"}}
+        {{!-- Draconian Clan (conditionally shown via JS) --}}
+        <div class="clan-field">
+          {{> "systems/the-marked-system/templates/actors/parts/subparts/clandrop.hbs"}}
+        </div>
+
+        {{!-- Background Dropdown --}}
+        {{> "systems/the-marked-system/templates/actors/parts/subparts/backdrop.hbs"}}
+
       </div>
 
-      {{!-- SPIRIT FIELDS --}}
+      {{!-- SPIRIT ECONOMY --}}
       <div class="meta-row flexrow">
 
         <div class="field">
@@ -76,9 +81,11 @@
                  value="{{system.details.totalSpirit}}"
                  disabled />
         </div>
+
       </div>
 
-    </div>{{!-- /.header-fields --}}
+    </div> {{!-- /.header-fields --}}
 
-  </div>{{!-- /.header-main-row --}}
+  </div> {{!-- /.header-main-row --}}
+
 </header>
