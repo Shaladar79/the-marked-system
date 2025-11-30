@@ -9,16 +9,17 @@
   {{!-- ============================
        RACE SECTION (placeholder)
        ============================ --}}
-  <h3>Race</h3>
-
-  <div class="info-block race-info">
-    {{#if system.details.race}}
-      <strong>{{lookup config.races system.details.race}}</strong><br>
-      <em>Race information coming soon.</em>
-    {{else}}
-      <em>No race selected.</em>
-    {{/if}}
-  </div>
+<h3>Race Description</h3>
+<div class="info-block">
+  {{#if system.details.race}}
+    {{#with (lookup config.raceData system.details.race) as |race|}}
+      <strong>{{race.name}}</strong><br>
+      {{{race.description}}}
+    {{/with}}
+  {{else}}
+    <em>Select a race to view its description.</em>
+  {{/if}}
+</div>
 
   <hr>
 
