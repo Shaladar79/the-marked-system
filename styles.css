@@ -210,3 +210,14 @@
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   opacity: 0.9;
 }
+
+.info-section .info-collapse > summary {
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.info-section .info-collapse {
+  margin-bottom: 0.5rem;
+}
+
