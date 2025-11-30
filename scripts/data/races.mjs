@@ -556,7 +556,89 @@ artisanship with philosophy, creating a culture where creation and identity are 
     `
 },
 
-  earthen:     { name: "Earthen",     description: "" },
+  earthen: {
+  label: "Earthen",
+  img: "systems/the-marked-system/assets/races/earthen.webp",
+  description: `
+<h2>Earthen</h2>
+
+<h3>Appearance</h3>
+<p>
+The Earthen are stout, compact beings forged from the stone and soil of Mezoria’s deepest reaches. 
+Their bodies resemble living sculptures: dense, rugged skin with natural cracks and seams where 
+glowing mineral light occasionally shines through. Small fragments of rock protrude along their 
+arms, shoulders, and back, giving them a rugged, weathered silhouette.
+</p>
+
+<p>
+What outsiders often mistake for decorative jewelry is actually part of their anatomy—
+<strong>clusters of gemstones</strong> that sprout like hair from their skulls, jaws, and brows. These 
+gemstone formations come in countless shapes and hues, from dull granite-like growths to brilliant 
+crystalline arrays. Both men and women possess these gemstone “manes” and “beards,” 
+making gender nearly impossible for outsiders to identify. Among Earthen, slight differences in 
+stone texture, gem cut, and mineral sheen are unmistakable markers of identity and heritage.
+</p>
+
+<h3>Temperament</h3>
+<p>
+Earthen are famously <strong>stoic</strong>. Their emotions move as slowly and as deeply as the tectonic 
+forces that birthed them. They speak little, listen much, and only act after long contemplation. 
+To most other races they appear <strong>grumpy, curt, or indifferent</strong>, yet their cool demeanor hides a 
+well of patience, loyalty, and quiet wisdom.
+</p>
+
+<p>
+Anger is rare for the Earthen—  
+but once roused, it is unstoppable, like a mountain deciding to move.
+</p>
+
+<h3>Society & Culture</h3>
+<p>
+Earthen cities lie far beneath Mezoria’s surface in vast caverns lit by glowing fungi, molten 
+channels, and crystal forests. Their communities favor:
+</p>
+
+<ul>
+  <li><strong>carved stone architecture</strong> shaped directly into the cavern walls</li>
+  <li><strong>gem-forging halls</strong> where artisans coax beauty from raw crystal</li>
+  <li><strong>deep communal chambers</strong> used for meditation and harmonic chanting</li>
+</ul>
+
+<p>
+Their culture revolves around concepts of endurance, legacy, and the slow but inevitable shaping 
+of the world. They revere the <strong>Earth Heart</strong>, a mythic core of Mezoria representing resilience 
+and unbroken strength. Rituals often involve harmonic vibrations—deep chants that resonate through 
+stone and can be felt more than heard.
+</p>
+
+<h3>Gender & Family</h3>
+<p>
+Earthen do not emphasize gender distinctions. To outsiders they appear nearly identical, but among 
+their own kind they see endless nuances in mineral patterns, gem grain, density, and luster. 
+Their familial structures are built around <strong>stone-bonds</strong>—communal kin groups formed through shared 
+labor, shared stone ancestry, and shared resonance traditions.
+</p>
+
+<h3>Role in Mezoria</h3>
+<p>
+Earthen are valued across the world as:
+</p>
+
+<ul>
+  <li><strong>master craftsmen</strong> of gemstone, metal, and stone</li>
+  <li><strong>miners and excavators</strong> who navigate the depths safely</li>
+  <li><strong>geomancers</strong> with an intuitive sense of earth magic</li>
+  <li><strong>unshakable warriors</strong> whose patience outlasts any foe</li>
+</ul>
+
+<p>
+Despite their gruff exterior, Earthen are reliable allies whose word is as firm as the mountains. 
+Their patience can frustrate more impulsive races, but their wisdom and quiet strength have shaped 
+the foundations—literally and culturally—of civilizations throughout Mezoria.
+</p>
+    `
+},
+
   prismatic: {
   label: "Prismatic",
   img: "systems/the-marked-system/assets/races/prismatic.webp",
