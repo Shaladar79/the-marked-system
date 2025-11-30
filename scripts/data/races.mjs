@@ -51,8 +51,6 @@ their people are inseparable.
     `
 },
 
-
-  // 🔹 Placeholders for other races you’ll add later:
   human: {
   label: "Human",
   img: "systems/the-marked-system/assets/races/human.webp",
@@ -103,7 +101,52 @@ Faith—whether devoted or doubtful—is woven into the core of the human experi
     `
 },
 
-  etherean:    { name: "Etherean",    description: "" },
+  etherean: {
+  name: "Etherean",
+  img: "systems/the-marked-system/assets/races/etherean.webp",
+  description: `
+    <h2>Ethereans: The Otherworldly Entities of Mezoria</h2>
+
+    <p><strong>Origin and Arrival:</strong><br>
+    Ethereans are enigmatic beings from beyond the known realms of Mezoria,
+    arriving through extraordinary means. Some appear through unstable portals
+    or dimensional ruptures, others are summoned by powerful magic, and a rare
+    few are restored to life by the divine Aspects. Each Etherean’s origin is
+    unique, shaped by the nature of the universe they once inhabited.</p>
+
+    <p><strong>Appearance:</strong><br>
+    Ethereans possess forms as varied as the countless realms from which they
+    hail. Some resemble creatures of myth, others walk in shapes that defy
+    natural order. Their presence often carries subtle distortions of reality—
+    glimmers of light, shifting shadows, unusual scents, or ambient energies
+    that reveal their otherworldly nature.</p>
+
+    <p><strong>Abilities:</strong><br>
+    Their powers seem supernatural to Mezoria’s inhabitants. Ethereans often
+    wield abilities that reflect the laws and forces of their home realms:
+    temporal manipulation, elemental resonance, psionic force, spatial warping,
+    or stranger gifts. No two Ethereans manifest the same talents.</p>
+
+    <p><strong>Integration and Impact:</strong><br>
+    The arrival of an Etherean can be a blessing, a curiosity, or a threat.
+    Some integrate into society as scholars, explorers, or wanderers, sharing
+    knowledge of other worlds. Others bring agendas, mysteries, or dangers from
+    realms beyond, challenging Mezoria’s understanding of magic and existence.</p>
+
+    <p><strong>Society and Culture:</strong><br>
+    Ethereans have no unified culture within Mezoria. Each carries remnants of
+    their past life—if they remember it. Some form small enclaves that reflect
+    fragments of their home worlds, while others forge entirely new identities
+    among Mezoria’s races.</p>
+
+    <p><strong>Role in Mezoria:</strong><br>
+    Ethereans act as bridges to distant realities. Their presence alters
+    destinies, expands understanding, and introduces knowledge and power unseen
+    in Mezoria. Whether as allies, wanderers, or enigmatic forces, they leave
+    lasting marks upon the world.</p>
+  `
+},
+
   mythrian: {
   label: "Mythrian",
   img: "systems/the-marked-system/assets/races/mythrian.webp",
