@@ -12,6 +12,7 @@
           "tribe": "",
           "clan": "",
           "background": "",
+          "backgroundType": "",
           "currentSpirit": "0",
           "spentSpirit": 0,
           "totalSpirit": 0
