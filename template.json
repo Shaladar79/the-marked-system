@@ -6,6 +6,7 @@
         "details": {
           "name": "",
           "rank": "normal",
+          "markOfPurpose": "none", 
           "mark": "",
           "race": "",
           "tribe": "",
