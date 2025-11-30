@@ -106,7 +106,83 @@ Faith—whether devoted or doubtful—is woven into the core of the human experi
   etherean:    { name: "Etherean",    description: "" },
   mythrian:    { name: "Mythrian",    description: "" },
   sylvan:      { name: "Sylvan",      description: "" },
-  sprite:      { name: "Sprite",      description: "" },
+ sprite: {
+  label: "Sprite",
+  img: "systems/the-marked-system/assets/races/sprite.webp",
+  description: `
+<h2>Sprite</h2>
+
+<h3>Appearance</h3>
+<p>
+Sprites are <strong>small, radiant woodland beings</strong> whose presence seems to carry the very
+essence of enchantment. Standing no taller than a child, their delicate frames are
+light and graceful, built for effortless movement through both forest and sky.
+</p>
+
+<p>
+Their most striking feature is their <strong>multi-colored, mothlike or butterflylike wings</strong>,
+each pair glowing softly with hues of pinks, greens, blues, golds, or lilacs. When
+Sprites gather, their wings cast prismatic arrays of light across the forest floor,
+creating natural spectacles revered by other woodland creatures.
+</p>
+
+<p>
+Their eyes shimmer like morning dew, and their hair often reflects the tones of wild
+flowers or moonlit streams. Everything about a Sprite feels alive, vibrant, and
+joyfully unpredictable.
+</p>
+
+<h3>Origin</h3>
+<p>
+Sprites originate from the <strong>Fae Realms</strong>—a place of boundless whimsy, ancient magic,
+and unpredictable wonder. They crossed into Mezoria during the earliest age of
+interplanar thinning, and unlike many fae, they chose to stay.  
+To this day, their spirits carry the strange logic and wild beauty of their homeland.
+</p>
+
+<h3>Culture & Nature</h3>
+<p>
+Sprites are famously <strong>frivolous, curious, and playful</strong>. They treasure games, pranks,
+music, dance, and exploration. Their attention is fleeting, their laughter infectious,
+and their view of the world eternally optimistic. Yet beneath their whimsical exterior
+lies a profound reverence for <strong>nature’s rhythms</strong>.
+</p>
+
+<p>
+They act as caretakers of glades, flowers, mushrooms, streams, and hidden woodland
+groves. Sprites believe every rock, root, and raindrop contains a soul worth respecting.
+They form small, communal circles that dance beneath moonlight, draw runes of harmony
+into the soil, and sing songs that help the forest grow.
+</p>
+
+<h3>Society & Bonds</h3>
+<p>
+Sprite settlements are hidden within glimmering clearings, mushroom rings, treetop
+villages, or small fae thickets where magical energy runs wild. They rarely appoint
+leaders; instead, they follow whoever seems the most interesting at the moment.
+Tradition, to a Sprite, is whatever hasn’t gotten boring yet.
+</p>
+
+<p>
+Though gentle in spirit, they are fiercely protective of their homes. A grove blessed
+by Sprites is often shielded by charms, illusions, and unpredictable fae tricks.
+Those who harm the forest quickly discover the wrath of a thousand tiny wings.
+</p>
+
+<h3>Role in Mezoria</h3>
+<p>
+Sprites serve as <strong>messengers of the wild</strong>, <strong>keepers of fae secrets</strong>, and
+<strong>ambassadors of wonder</strong>. Their natural magical talent, boundless curiosity,
+and innate connection to life make them invaluable companions—and unpredictable foes.
+</p>
+
+<p>
+Above all else, Sprites adventure for one reason:  
+<strong>to see something new.</strong>
+</p>
+    `
+},
+
   auramine: {
     label: "Auramine",
     img: "systems/the-marked-system/assets/races/auramine.webp",
