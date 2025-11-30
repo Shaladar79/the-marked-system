@@ -34,29 +34,23 @@
                placeholder="Name" />
       </div>
 
-      {{!-- RANK / RACE / TRIBE / CLAN / BACKGROUND --}}
-      <div class="meta-row flexrow">
+     {{!-- RANK / RACE / CLAN / TRIBE (no background here anymore) --}}
+<div class="meta-row flexrow">
 
-        {{!-- Rank Dropdown --}}
-        {{> "systems/the-marked-system/templates/actors/parts/subparts/rankdrop.hbs"}}
+  {{!-- RANK via partial --}}
+  {{> "systems/the-marked-system/templates/actors/parts/subparts/rankdrop.hbs"}}
+  
+  {{!-- RACE via partial --}}
+  {{> "systems/the-marked-system/templates/actors/parts/subparts/racedrop.hbs"}}
 
-        {{!-- Race Dropdown --}}
-        {{> "systems/the-marked-system/templates/actors/parts/subparts/racedrop.hbs"}}
+  {{!-- CLAN via partial --}}
+  {{> "systems/the-marked-system/templates/actors/parts/subparts/clandrop.hbs"}}
 
-        {{!-- Mythrian Tribe (conditionally shown via JS) --}}
-        <div class="tribe-field">
-          {{> "systems/the-marked-system/templates/actors/parts/subparts/tribedrop.hbs"}}
-        </div>
+  {{!-- TRIBE via partial --}}
+  {{> "systems/the-marked-system/templates/actors/parts/subparts/tribedrop.hbs"}}
 
-        {{!-- Draconian Clan (conditionally shown via JS) --}}
-        <div class="clan-field">
-          {{> "systems/the-marked-system/templates/actors/parts/subparts/clandrop.hbs"}}
-        </div>
+</div>
 
-       {{!-- Background Type + Background --}}
-        {{> "systems/the-marked-system/templates/actors/parts/subparts/backtype.hbs"}}
-        {{> "systems/the-marked-system/templates/actors/parts/subparts/backdrop.hbs"}}
-      </div>
 
       {{!-- SPIRIT ECONOMY --}}
       <div class="meta-row flexrow">
