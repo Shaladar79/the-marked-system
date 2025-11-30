@@ -105,7 +105,95 @@ Faith—whether devoted or doubtful—is woven into the core of the human experi
 
   etherean:    { name: "Etherean",    description: "" },
   mythrian:    { name: "Mythrian",    description: "" },
-  sylvan:      { name: "Sylvan",      description: "" },
+ sylvan: {
+  label: "Sylvan",
+  img: "systems/the-marked-system/assets/races/sylvan.webp",
+  description: `
+<h2>Sylvan</h2>
+
+<h3>Physical Appearance</h3>
+<p>
+Sylvans are a striking and elegant people, towering over most at heights that easily
+reach or exceed <strong>seven feet</strong>. Their forms are slender and graceful, shaped by
+centuries of coexistence with ancient forests. Their skin ranges from pale ivory to
+warmly tanned hues, each tone blending naturally with the woodland shadows.
+</p>
+
+<p>
+Their long, pointed ears and <strong>almond-shaped eyes</strong> are unmistakable markers of their
+fey lineage. A Sylvan’s eyes gleam with an inner light—luminous, old, and serene—
+reflecting wisdom gathered across centuries.
+</p>
+
+<h3>Attire & Demeanor</h3>
+<p>
+Sylvan clothing is woven from the <strong>living essence of the forest</strong>—leaf-fibers,
+enchanted bark-thread, mossweave, and natural dyes that deepen with age. Cloaks of
+forest-green, umber, and twilight blue allow them to walk unseen through their
+homelands. Their attire is as symbolic as it is functional, expressing their unity
+with nature.
+</p>
+
+<p>
+Their movements are quiet and fluid, their presence serene yet imposing. Even the
+most mundane gesture from a Sylvan feels deliberate, measured, and touched by the
+poetry of centuries.
+</p>
+
+<h3>Lifespan & Culture</h3>
+<p>
+Sylvans are among the <strong>longest-lived races</strong> in Mezoria, with lifespans extending
+beyond a millennium. This immense longevity shapes a culture steeped in tradition,
+refinement, and a deep respect for the balance of life.
+</p>
+
+<p>
+They are <strong>keepers of ancient lore</strong>, guardians of forgotten groves, and historians of
+the world’s living memory. Stories, rituals, songs, and magics are passed down through
+lineages that trace back to the earliest ages of Mezoria.
+</p>
+
+<h3>Habitat</h3>
+<p>
+Sylvan settlements are nestled within <strong>enchanted forests</strong>, hidden among colossal trees,
+woven into shimmering canopies, or built into glowing, bioluminescent groves.
+Architectural lines imitate the graceful arc of branches or flowing water, forming
+homes that feel <em>alive</em> rather than constructed.
+</p>
+
+<p>
+These sanctuaries are illuminated not by torches but by <strong>natural luminescence</strong>—
+glowing vines, crystal-kissed flowers, or magical lights that drift like fireflies.
+Visitors often describe Sylvan woods as dreamscapes painted with moonlight.
+</p>
+
+<h3>Connection to Nature</h3>
+<p>
+Of all the mortal peoples, Sylvans possess one of the deepest bonds with the natural
+world. Their magic is instinctual, flowing through them as naturally as breath. They
+can commune with animals, coax plants to grow, sense disturbances within miles, and
+call upon elemental forces when their groves are threatened.
+</p>
+
+<p>
+To a Sylvan, <strong>nature is both kin and guardian</strong>. Every tree has a voice, every stone a
+story, and every breeze a message to be understood.
+</p>
+
+<h3>Role in Mezoria</h3>
+<p>
+As beings of fey blood and ancient purpose, Sylvans act as <strong>mediators between the
+natural and magical worlds</strong>. When the balance of Mezoria is endangered—by tyranny,
+blight, arcane disruption, or war—it is often the Sylvans who respond first.
+</p>
+
+<p>
+They are <strong>wise allies</strong> to those who honor the wild… and <strong>unforgiving foes</strong> to those
+who trespass against it.
+</p>
+    `
+},
+
  sprite: {
   label: "Sprite",
   img: "systems/the-marked-system/assets/races/sprite.webp",
