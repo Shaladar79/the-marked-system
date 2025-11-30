@@ -86,6 +86,7 @@ MarkedConfig.backgrounds = {
 
 // Marks of Purpose
 MarkedConfig.markOfPurpose = {
+   none:      "No Mark",      // default / placeholder
   guardian:   "Guardian",
   defender:   "Defender",
   arcanist:   "Arcanist",
