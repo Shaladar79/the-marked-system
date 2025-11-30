@@ -1,4 +1,6 @@
 // scripts/config.mjs
+import { MarkedRaceDescriptions } from "./data/races.mjs";
+
 
 export const MarkedConfig = {};
 
