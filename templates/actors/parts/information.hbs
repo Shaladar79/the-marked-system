@@ -6,56 +6,40 @@
 
   <hr>
 
-  {{!-- ============================
-       RACE SECTION (placeholder)
-       ============================ --}}
-<h3>Race Description</h3>
-<div class="info-block">
-  {{#if system.details.race}}
-    {{#with (lookup config.raceData system.details.race) as |race|}}
-      <strong>{{race.name}}</strong><br>
-      {{{race.description}}}
-    {{/with}}
-  {{else}}
-    <em>Select a race to view its description.</em>
-  {{/if}}
-</div>
+  {{!-- =======================
+       RACE INFORMATION
+       ======================= --}}
+  <h3>Race Description</h3>
+  <div class="info-block">
+    {{#if system.details.race}}
+      {{!-- system.details.race holds the *key* (e.g. "draconian") --}}
+      {{lookup config.raceDescriptions system.details.race}}
+    {{else}}
+      <em>Select a race to view its description.</em>
+    {{/if}}
+  </div>
 
   <hr>
 
-  {{!-- ============================
-       BACKGROUND SECTION
-       ============================ --}}
+  {{!-- =======================
+       BACKGROUND SELECTION + INFO
+       ======================= --}}
   <h3>Background</h3>
 
-  <div class="info-block background-info">
+  <div class="info-background-row flexrow">
+    {{!-- BACKGROUND TYPE DROPDOWN --}}
+    {{> "systems/the-marked-system/templates/actors/parts/subparts/backtype.hbs"}}
 
+    {{!-- BACKGROUND DROPDOWN --}}
+    {{> "systems/the-marked-system/templates/actors/parts/subparts/backdrop.hbs"}}
+  </div>
+
+  <div class="info-block">
     {{#if system.details.background}}
-
-      <strong>
-        {{!-- Look up the full readable background label --}}
-        {{#if system.details.backgroundType}}
-          {{!-- Use the correct background list depending on type --}}
-          {{#with (lookup config.backgroundsByType system.details.backgroundType) as |bgList|}}
-            {{lookup bgList system.details.background}}
-          {{/with}}
-        {{else}}
-          {{!-- Fallback: search in all backgrounds if type missing --}}
-          {{lookup config.backgrounds system.details.background}}
-        {{/if}}
-      </strong>
-
-      <br>
-
-      {{!-- Background description --}}
       {{lookup config.backgroundDescriptions system.details.background}}
-
     {{else}}
-
-      <em>No background selected.</em>
-
+      <em>Select a background to view its description.</em>
     {{/if}}
-
   </div>
 
 </section>
