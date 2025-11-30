@@ -37,6 +37,15 @@ export class MarkedActorSheet extends ActorSheet {
           navSelector: ".abilities-subtabs",
           contentSelector: ".abilities-subbody",
           initial: "marks"
+        },
+
+        // ---------------------------
+        // SUBTABS: Skills (Body / Mind / Soul)
+        // ---------------------------
+        {
+          navSelector: ".skills-sub-tabs",
+          contentSelector: ".skills-sub-body",
+          initial: "body-skills"
         }
       ],
 
@@ -60,7 +69,7 @@ export class MarkedActorSheet extends ActorSheet {
     // --------------------------------
     // RACE-DEPENDENT EXTRA DROPDOWNS
     // --------------------------------
-       const raceSelect = html.find('select[name="system.details.race"]');
+    const raceSelect = html.find('select[name="system.details.race"]');
     const tribeField = html.find(".tribe-field");
     const clanField  = html.find(".clan-field");
 
