@@ -86,18 +86,29 @@ MarkedConfig.backgrounds = {
 
 // Marks of Purpose
 MarkedConfig.markOfPurpose = {
-   none:      "No Mark",      // default / placeholder
-  guardian:   "Guardian",
-  defender:   "Defender",
+  none:       "No Mark",     // default placeholder
+  alchemist:  "Alchemist",
   arcanist:   "Arcanist",
+  berserker:  "Berserker",
   charlatan:  "Charlatan",
-  brawler:    "Brawler",
-  striker:    "Striker",
-  pious:      "Pious",
-  ranger:     "Ranger",
+  defender:   "Defender",
+  duelist:    "Duelist",
+  enchanter:  "Enchanter",
+  guardian:   "Guardian",
+  hexer:      "Hexer",
+  inquisitor: "Inquisitor",
+  marksman:   "Marksman",
+  mender:     "Mender",
+  oracle:     "Oracle",
+  pathfinder: "Pathfinder",
+  psion:      "Psion",
+  runesmith:  "Runesmith",
   skirmisher: "Skirmisher",
-  assassin:   "Assassin"
+  spellblade: "Spellblade",
+  striker:    "Striker",
+  warden:     "Warden"
 };
+
 
 //RACE Values
 MarkedConfig.raceStatus = {
