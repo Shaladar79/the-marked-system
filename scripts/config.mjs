@@ -64,25 +64,112 @@ MarkedConfig.draconianClans = {
 };
 
 // -------------------------------------
-// BACKGROUNDS (simple key → label)
+// BACKGROUND TYPES
 // -------------------------------------
-MarkedConfig.backgrounds = {
-  farmer:        "Farmer",
-  hunter:        "Hunter",
-  merchant:      "Merchant",
-  scholar:       "Scholar",
-  soldier:       "Soldier",
-  blacksmith:    "Blacksmith",
-  sailor:        "Sailor",
-  noble:         "Noble",
-  street_urchin: "Street Urchin",
-  entertainer:   "Entertainer",
-  thief:         "Thief",
-  guard:         "Guard",
-  scribe:        "Scribe",
-  bounty_hunter: "Bounty Hunter",
-  explorer:      "Explorer"
+MarkedConfig.backgroundTypes = {
+  common:  "Common Professions",
+  skilled: "Skilled Trades & Crafts",
+  street:  "Street-Level Backgrounds",
+  social:  "Social & Cultural Backgrounds"
 };
+
+// -------------------------------------
+// BACKGROUNDS BY TYPE
+// -------------------------------------
+MarkedConfig.backgroundsByType = {
+  common: {
+    farmer:        "Farmer",
+    hunter:        "Hunter",
+    fisher:        "Fisher",
+    laborer:       "Laborer",
+    merchant:      "Merchant",
+    shepherd:      "Shepherd",
+    gravedigger:   "Gravedigger",
+    stable_hand:   "Stable Hand",
+    messenger:     "Messenger",
+    woodcutter:    "Woodcutter",
+    milkmaid:      "Milkmaid / Dairyman",
+    field_hand:    "Field Hand",
+    field_guide:   "Field Guide",
+    cook:          "Cook"
+  },
+
+  skilled: {
+    blacksmith_app:  "Blacksmith’s Apprentice",
+    herbalist:       "Herbalist",
+    scribe:          "Scribe",
+    tanner:          "Tanner",
+    glassblower:     "Glassblower",
+    weaver:          "Weaver",
+    potter:          "Potter",
+    chandler:        "Chandler (Candle Maker)",
+    mason:           "Mason",
+    bowyer_fletcher: "Bowyer/Fletcher",
+    brewer:          "Brewer",
+    tailor:          "Tailor",
+    shipwright:      "Shipwright",
+    jeweler:         "Jeweler",
+    carpenter:       "Carpenter",
+    calligrapher:    "Calligrapher",
+    miner:           "Miner",
+    tinker:          "Tinker",
+    butcher:         "Butcher",
+    cobbler:         "Cobbler",
+    bookbinder:      "Bookbinder",
+    painter:         "Painter",
+    ropemaker:       "Ropemaker",
+    armorer:         "Armorer",
+    perfumer:        "Perfumer"
+  },
+
+  street: {
+    urchin:          "Urchin",
+    beggar:          "Beggar",
+    street_perf:     "Street Performer",
+    drudge:          "Drudge",
+    pickpocket:      "Pickpocket",
+    lookout:         "Lookout",
+    runner:          "Runner",
+    fence:           "Fence",
+    rat_catcher:     "Rat Catcher",
+    dockhand:        "Dockhand",
+    scavenger:       "Scavenger",
+    alley_healer:    "Alley Healer",
+    street_preacher: "Street Preacher"
+  },
+
+  social: {
+    noble_courtier:        "Noble Courtier",
+    temple_acolyte:        "Temple Acolyte",
+    clan_heir:             "Clan Heir",
+    diplomatic_envoy:      "Diplomatic Envoy",
+    wandering_pilgrim:     "Wandering Pilgrim",
+    tribal_nomad:          "Tribal Nomad",
+    scholars_ward:         "Scholar’s Ward",
+    exiled_bloodline:      "Exiled Bloodline",
+    cultural_artisan:      "Cultural Artisan",
+    temple_foundling:      "Temple Foundling",
+    guildborn:             "Guildborn",
+    cult_survivor:         "Cult Survivor",
+    diplomatic_hostage:    "Diplomatic Hostage",
+    festival_child:        "Festival Child",
+    marked_prophecy:       "Marked by Prophecy",
+    monastic_disciple:     "Monastic Disciple",
+    political_dissident:   "Political Dissident",
+    archivists_kin:        "Archivist’s Kin",
+    hearth_storykeeper:    "Hearth-Bound Storykeeper",
+    oath_retainer:         "Oath-Bound Retainer"
+  }
+};
+
+// Optional: flat map of all backgrounds, if anything still uses it
+MarkedConfig.backgrounds = {
+  ...MarkedConfig.backgroundsByType.common,
+  ...MarkedConfig.backgroundsByType.skilled,
+  ...MarkedConfig.backgroundsByType.street,
+  ...MarkedConfig.backgroundsByType.social
+};
+
 
 // Marks of Purpose
 MarkedConfig.markOfPurpose = {
