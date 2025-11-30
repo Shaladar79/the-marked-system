@@ -6,4 +6,13 @@
   <div class="marks-grid">
     {{> "systems/the-marked-system/templates/actors/parts/subparts/mopdrop.hbs"}}
   </div>
+
+  {{!-- Mark description appears dynamically here --}}
+  <div class="mark-description">
+    {{#if system.details.markOfPurpose}}
+      {{lookup config.markOfPurposeDescriptions system.details.markOfPurpose}}
+    {{else}}
+      Select a Mark of Purpose to see its description.
+    {{/if}}
+  </div>
 </section>
