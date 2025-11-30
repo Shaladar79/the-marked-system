@@ -290,5 +290,70 @@ artisanship with philosophy, creating a culture where creation and identity are 
 },
 
   earthen:     { name: "Earthen",     description: "" },
-  prismatic:   { name: "Prismatic",   description: "" }
+  prismatic: {
+  label: "Prismatic",
+  img: "systems/the-marked-system/assets/races/prismatic.webp",
+  description: `
+<h2>Prismatic</h2>
+
+<h3>Appearance</h3>
+<p>
+Prismatics are beings of breathtaking beauty—humanoid in silhouette, yet formed entirely
+of <strong>translucent, faceted crystal</strong>. Their bodies refract light into shimmering rainbows
+with every movement, casting prismatic patterns across their surroundings. Each facet
+glitters with internal luminescence, giving the impression of a living gem infused
+with magical radiance.
+</p>
+
+<p>
+Despite appearing delicate, their bodies are surprisingly resilient. Their crystalline forms
+can withstand great force, yet their elegant, angular structure conveys both <strong>fragility
+and eternal strength</strong>. Roughly human-sized, they move with a graceful, otherworldly
+fluidity, as though guided by inner harmonic vibrations.
+</p>
+
+<h3>Origin</h3>
+<p>
+Prismatics were crafted by a <strong>lost civilization</strong> over 10,000 years ago—an advanced people
+whose mastery of magic blurred the line between art, science, and soulcraft.  
+Whether intended as guardians, vessels, or successors, none now remember.
+</p>
+
+<p>
+When their creators vanished, the Prismatics awoke collectively into sentience.  
+Legends claim their minds hold <strong>the remnants of their makers’ collective memory</strong>,
+yet fragmented beyond repair. Echoes of ancient knowledge remain, but the clarity
+of their origin fades a little more with every passing millennium.
+</p>
+
+<h3>Society & Integration</h3>
+<p>
+Despite their ancient and mysterious past, the Prismatics have integrated well into
+the modern societies of Mezoria. Their innate connection to magical currents makes
+them natural practitioners of arcane arts, rune-sculpting, and crystalline enchantment.
+</p>
+
+<p>
+Communities across Mezoria value Prismatics not only for their magical insight,
+but for their <strong>balanced, contemplative worldview</strong>. Their perspective—shaped by
+fragments of lost ages—often provides clarity in political, spiritual, and arcane matters.
+</p>
+
+<h3>Role in Mezoria</h3>
+<p>
+Prismatics serve as <strong>living artifacts</strong> of the ancient world, their glowing forms
+bridging forgotten epochs with the present age. Their bodies resonate with magical
+frequencies unique to them, making them highly sought after as scholars, diplomats,
+mages, and guardians of arcane lore.
+</p>
+
+<p>
+Ever searching for the truth of their origin, the Prismatics explore the world with
+quiet determination, seeking meaning in the fragments of memory they carry.
+Their existence safeguards the balance of Mezoria, for within each Prismatic lies
+a spark of ancient creation—and the potential for future revelation.
+</p>
+    `
+},
+
 };
