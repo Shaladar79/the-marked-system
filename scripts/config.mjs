@@ -327,6 +327,8 @@ MarkedConfig.raceAttributes = {
 MarkedConfig.tribes = MarkedConfig.mythrianTribes;
 MarkedConfig.clans  = MarkedConfig.draconianClans;
 
-// Old name used in templates: config.marksPurpose
-MarkedConfig.marksPurpose = MarkedConfig.markOfPurpose;
+// Old names used in templates for Marks of Purpose
+// (covers markOfPurpose, marksOfPurpose, marksPurpose)
+MarkedConfig.marksOfPurpose = MarkedConfig.markOfPurpose;
+MarkedConfig.marksPurpose   = MarkedConfig.markOfPurpose;
 
