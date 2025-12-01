@@ -6,7 +6,7 @@
         "details": {
           "name": "",
           "rank": "normal",
-          "markOfPurpose": "none", 
+          "markOfPurpose": "none",
           "mark": "",
           "race": "",
           "tribe": "",
@@ -53,6 +53,49 @@
           "pace":      { "label": "Pace",      "value": 0 },
           "armor":     { "label": "Armor",     "value": 0, "max": 0 },
           "shielding": { "label": "Shielding", "value": 0 }
+        },
+        "skills": {
+          "body": {
+            "might": {
+              "expertise": false,
+              "athletics": {
+                "label": "Athletics",
+                "trained": false,
+                "specialty": "",
+                "total": 0
+              },
+              "bruteForce": {
+                "label": "Brute Force",
+                "trained": false,
+                "specialty": "",
+                "total": 0
+              },
+              "heft": {
+                "label": "Heft",
+                "trained": false,
+                "specialty": "",
+                "total": 0
+              },
+              "combatHeavy": {
+                "label": "Combat: Heavy Weapons",
+                "trained": false,
+                "specialty": "",
+                "total": 0
+              },
+              "combatGrappling": {
+                "label": "Combat: Grappling",
+                "trained": false,
+                "specialty": "",
+                "total": 0
+              },
+              "combatMedium": {
+                "label": "Combat: Medium Weapons",
+                "trained": false,
+                "specialty": "",
+                "total": 0
+              }
+            }
+          }
         }
       }
     },
