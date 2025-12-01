@@ -42,12 +42,12 @@ export class MarkedActorSheet extends ActorSheet {
         // ---------------------------
         // SUBTABS: Skills (Body / Mind / Soul)
         // ---------------------------
-        {
-          navSelector: ".skills-sub-tabs",
-          contentSelector: ".skills-sub-body",
-          initial: "body-skills"
-        }
-      ],
+       {
+  navSelector: ".skills-subtabs",
+  contentSelector: ".skills-subbody",
+  initial: "body-skills"
+},
+
 
       submitOnChange: true,
       submitOnClose: true
