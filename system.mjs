@@ -60,7 +60,10 @@ Hooks.once("setup", async function () {
    "systems/the-marked-system/templates/actors/parts/skills/body-endurance.hbs",
    "systems/the-marked-system/templates/actors/parts/skills/mind-insight.hbs",
    "systems/the-marked-system/templates/actors/parts/skills/mind-quickness.hbs",
-   "systems/the-marked-system/templates/actors/parts/skills/mind-willpower.hbs"
+   "systems/the-marked-system/templates/actors/parts/skills/mind-willpower.hbs",
+   "systems/the-marked-system/templates/actors/parts/skills/soul-presence.hbs",
+   "systems/the-marked-system/templates/actors/parts/skills/soul-grace.hbs",
+   "systems/the-marked-system/templates/actors/parts/skills/soul-resolve.hbs"
 
 ]);
 });
