@@ -221,10 +221,10 @@
   margin-bottom: 0.5rem;
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
+.skills-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* space between the blocks */
 }
 
 .skills-block {
