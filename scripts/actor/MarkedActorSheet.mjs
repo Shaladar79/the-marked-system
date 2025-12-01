@@ -34,8 +34,9 @@ export class MarkedActorSheet extends ActorSheet {
 
         // SUBTABS: Skills (Body / Mind / Soul)
         {
-          navSelector: ".skills-subtabs",
-          contentSelector: ".skills-subbody",
+          // 🔹 match skills.hbs: class="skills-sub-tabs" and class="skills-sub-body"
+          navSelector: ".skills-sub-tabs",
+          contentSelector: ".skills-sub-body",
           initial: "body-skills"
         }
       ],
@@ -144,3 +145,4 @@ export class MarkedActorSheet extends ActorSheet {
     });
   }
 }
+
