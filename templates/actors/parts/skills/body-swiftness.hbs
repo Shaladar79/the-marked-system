@@ -1,0 +1,222 @@
+{{!-- templates/actors/parts/skills/body-swiftness.hbs --}}
+
+<section class="attribute-skill-block">
+
+  {{!-- SWIFTNESS HEADER ROW --}}
+  <div class="attribute-header flexrow">
+    <div class="attr-main">
+      <label>Swiftness</label>
+      <span class="attr-value">
+        {{system.attributes.body.swiftness.value}}%
+      </span>
+    </div>
+
+    <div class="attr-controls">
+      <label class="checkbox">
+        <input type="checkbox"
+               name="system.skills.swiftness.expertise"
+               {{checked system.skills.swiftness.expertise}} />
+        Expertise
+      </label>
+
+      <button type="button"
+              class="roll-attribute"
+              data-attr="body.swiftness">
+        🎲
+      </button>
+    </div>
+  </div>
+
+  {{!-- SWIFTNESS SKILLS TABLE --}}
+  <table class="skill-table">
+    <thead>
+      <tr>
+        <th>Skill</th>
+        <th>Trained</th>
+        <th>Specialty</th>
+        <th>Total&nbsp;%</th>
+        <th>Roll</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      {{!-- Acrobatics --}}
+      <tr>
+        <td>Acrobatics</td>
+        <td>
+          <input type="checkbox"
+                 name="system.skills.swiftness.acrobatics.trained"
+                 {{checked system.skills.swiftness.acrobatics.trained}} />
+        </td>
+        <td>
+          <input type="text"
+                 name="system.skills.swiftness.acrobatics.specialty"
+                 value="{{system.skills.swiftness.acrobatics.specialty}}" />
+        </td>
+        <td>
+          {{system.skills.swiftness.acrobatics.total}}
+        </td>
+        <td>
+          <button type="button"
+                  class="roll-skill"
+                  data-skill="swiftness.acrobatics">
+            🎲
+          </button>
+        </td>
+      </tr>
+
+      {{!-- Stealth --}}
+      <tr>
+        <td>Stealth</td>
+        <td>
+          <input type="checkbox"
+                 name="system.skills.swiftness.stealth.trained"
+                 {{checked system.skills.swiftness.stealth.trained}} />
+        </td>
+        <td>
+          <input type="text"
+                 name="system.skills.swiftness.stealth.specialty"
+                 value="{{system.skills.swiftness.stealth.specialty}}" />
+        </td>
+        <td>
+          {{system.skills.swiftness.stealth.total}}
+        </td>
+        <td>
+          <button type="button"
+                  class="roll-skill"
+                  data-skill="swiftness.stealth">
+            🎲
+          </button>
+        </td>
+      </tr>
+
+      {{!-- Sleight of Hand --}}
+      <tr>
+        <td>Sleight of Hand</td>
+        <td>
+          <input type="checkbox"
+                 name="system.skills.swiftness.sleight.trained"
+                 {{checked system.skills.swiftness.sleight.trained}} />
+        </td>
+        <td>
+          <input type="text"
+                 name="system.skills.swiftness.sleight.specialty"
+                 value="{{system.skills.swiftness.sleight.specialty}}" />
+        </td>
+        <td>
+          {{system.skills.swiftness.sleight.total}}
+        </td>
+        <td>
+          <button type="button"
+                  class="roll-skill"
+                  data-skill="swiftness.sleight">
+            🎲
+          </button>
+        </td>
+      </tr>
+
+      {{!-- Disarm (locks + traps) --}}
+      <tr>
+        <td>Disarm</td>
+        <td>
+          <input type="checkbox"
+                 name="system.skills.swiftness.disarm.trained"
+                 {{checked system.skills.swiftness.disarm.trained}} />
+        </td>
+        <td>
+          <input type="text"
+                 name="system.skills.swiftness.disarm.specialty"
+                 value="{{system.skills.swiftness.disarm.specialty}}" />
+        </td>
+        <td>
+          {{system.skills.swiftness.disarm.total}}
+        </td>
+        <td>
+          <button type="button"
+                  class="roll-skill"
+                  data-skill="swiftness.disarm">
+            🎲
+          </button>
+        </td>
+      </tr>
+
+      {{!-- Combat: Light Weapons --}}
+      <tr>
+        <td>Combat: Light Weapons</td>
+        <td>
+          <input type="checkbox"
+                 name="system.skills.swiftness.light.trained"
+                 {{checked system.skills.swiftness.light.trained}} />
+        </td>
+        <td>
+          <input type="text"
+                 name="system.skills.swiftness.light.specialty"
+                 value="{{system.skills.swiftness.light.specialty}}" />
+        </td>
+        <td>
+          {{system.skills.swiftness.light.total}}
+        </td>
+        <td>
+          <button type="button"
+                  class="roll-skill"
+                  data-skill="swiftness.light">
+            🎲
+          </button>
+        </td>
+      </tr>
+
+      {{!-- Combat: Throwing Weapons --}}
+      <tr>
+        <td>Combat: Throwing Weapons</td>
+        <td>
+          <input type="checkbox"
+                 name="system.skills.swiftness.throwing.trained"
+                 {{checked system.skills.swiftness.throwing.trained}} />
+        </td>
+        <td>
+          <input type="text"
+                 name="system.skills.swiftness.throwing.specialty"
+                 value="{{system.skills.swiftness.throwing.specialty}}" />
+        </td>
+        <td>
+          {{system.skills.swiftness.throwing.total}}
+        </td>
+        <td>
+          <button type="button"
+                  class="roll-skill"
+                  data-skill="swiftness.throwing">
+            🎲
+          </button>
+        </td>
+      </tr>
+
+      {{!-- Combat: Ranged Weapons --}}
+      <tr>
+        <td>Combat: Ranged Weapons</td>
+        <td>
+          <input type="checkbox"
+                 name="system.skills.swiftness.ranged.trained"
+                 {{checked system.skills.swiftness.ranged.trained}} />
+        </td>
+        <td>
+          <input type="text"
+                 name="system.skills.swiftness.ranged.specialty"
+                 value="{{system.skills.swiftness.ranged.specialty}}" />
+        </td>
+        <td>
+          {{system.skills.swiftness.ranged.total}}
+        </td>
+        <td>
+          <button type="button"
+                  class="roll-skill"
+                  data-skill="swiftness.ranged">
+            🎲
+          </button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</section>
