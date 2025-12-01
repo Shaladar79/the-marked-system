@@ -14,6 +14,13 @@
   <section class="sheet-body">
 
     {{!-- =========================
+         INFORMATION TAB
+         ========================= --}}
+    <div class="tab" data-group="primary" data-tab="information">
+      {{> "systems/the-marked-system/templates/actors/parts/information.hbs"}}
+    </div>
+
+    {{!-- =========================
          ATTRIBUTES & STATUS TAB
          ========================= --}}
     <div class="tab" data-group="primary" data-tab="attr-status">
@@ -43,28 +50,12 @@
       {{> "systems/the-marked-system/templates/actors/parts/abilities.hbs"}}
     </div>
 
-   <!-- SKILLS TAB -->
-<div class="tab" data-group="primary" data-tab="skills">
-
-  <nav class="skills-subtabs tabs" data-group="skills-sub">
-    <a class="item" data-tab="body-skills">Body Skills</a>
-  </nav>
-
-  <section class="skills-subbody">
-    <div class="tab" data-group="skills-sub" data-tab="body-skills">
-      {{> "systems/the-marked-system/templates/actors/parts/skills/body-might.hbs"}}
+    {{!-- =========================
+         SKILLS TAB
+         ========================= --}}
+    <div class="tab" data-group="primary" data-tab="skills">
+      {{> "systems/the-marked-system/templates/actors/parts/skills.hbs"}}
     </div>
-  </section>
-
-</div>
-
-    {{!-- INFORMATION TAB --}}
-    <div class="tab" data-group="primary" data-tab="information">
-      {{> "systems/the-marked-system/templates/actors/parts/information.hbs"}}
-    </div>
-
-  </section>
-</form>
 
   </section>
 </form>
