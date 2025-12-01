@@ -473,7 +473,6 @@ MarkedConfig.raceAttributes = {
     "mind.insight": 2,
     "mind.focus": 2,
     "soul.grace": 4,
-    "soul.resonance": 4
   },
   Mythrian: {
     "body.might": 4,
@@ -514,7 +513,6 @@ MarkedConfig.raceAttributes = {
     "mind.focus": 2,
     "soul.presence": 2,
     "soul.resolve": 4,
-    "soul.resonance": 2
   },
   Earthen: {
     "body.might": 2,
@@ -522,9 +520,7 @@ MarkedConfig.raceAttributes = {
     "mind.willpower": 2
   },
   Prismatic: {
-    "mind.focus": 4,
     "mind.quickness": 2,
-    "soul.resonance": 4,
     "soul.presence": 2
   }
 };
