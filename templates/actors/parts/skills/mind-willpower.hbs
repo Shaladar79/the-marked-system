@@ -1,0 +1,99 @@
+{{!-- templates/actors/parts/skills/mind-willpower.hbs --}}
+
+<section class="attribute-skill-block">
+
+  <details class="attr-collapse" open>
+    <summary>
+      <div class="attribute-header flexrow">
+        <div class="attr-main">
+          <label>Willpower</label>
+          <span class="attr-value">
+            {{system.attributes.mind.willpower.value}}%
+          </span>
+        </div>
+
+        <div class="attr-controls">
+          <label class="checkbox">
+            <input type="checkbox"
+                   name="system.skills.mind.willpower.expertise"
+                   {{checked system.skills.mind.willpower.expertise}} />
+            Expertise
+          </label>
+
+          <button type="button"
+                  class="roll-attribute"
+                  data-attr="mind.willpower">
+            🎲
+          </button>
+        </div>
+      </div>
+    </summary>
+
+    <table class="skill-table">
+      <thead>
+        <tr>
+          <th>Skill</th>
+          <th>Trained</th>
+          <th>Specialty</th>
+          <th>Total&nbsp;%</th>
+          <th>Roll</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        {{!-- Concentration --}}
+        <tr>
+          <td>Concentration</td>
+          <td>
+            <input type="checkbox"
+                   name="system.skills.mind.willpower.concentration.trained"
+                   {{checked system.skills.mind.willpower.concentration.trained}} />
+          </td>
+          <td>
+            <input type="text"
+                   name="system.skills.mind.willpower.concentration.specialty"
+                   value="{{system.skills.mind.willpower.concentration.specialty}}" />
+          </td>
+          <td>
+            {{system.skills.mind.willpower.concentration.total}}
+          </td>
+          <td>
+            <button type="button"
+                    class="roll-skill"
+                    data-skill="mind.willpower.concentration">
+              🎲
+            </button>
+          </td>
+        </tr>
+
+        {{!-- Mental Fortitude --}}
+        <tr>
+          <td>Mental Fortitude</td>
+          <td>
+            <input type="checkbox"
+                   name="system.skills.mind.willpower.mentalFortitude.trained"
+                   {{checked system.skills.mind.willpower.mentalFortitude.trained}} />
+          </td>
+          <td>
+            <input type="text"
+                   name="system.skills.mind.willpower.mentalFortitude.specialty"
+                   value="{{system.skills.mind.willpower.mentalFortitude.specialty}}" />
+          </td>
+          <td>
+            {{system.skills.mind.willpower.mentalFortitude.total}}
+          </td>
+          <td>
+            <button type="button"
+                    class="roll-skill"
+                    data-skill="mind.willpower.mentalFortitude">
+              🎲
+            </button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </details>
+</section>
