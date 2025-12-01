@@ -34,7 +34,7 @@ export class MarkedActorSheet extends ActorSheet {
 
         // SUBTABS: Skills (Body / Mind / Soul)
         {
-          // 🔹 match skills.hbs: class="skills-sub-tabs" and class="skills-sub-body"
+          // match skills.hbs: class="skills-sub-tabs" and class="skills-sub-body"
           navSelector: ".skills-sub-tabs",
           contentSelector: ".skills-sub-body",
           initial: "body-skills"
@@ -143,6 +143,71 @@ export class MarkedActorSheet extends ActorSheet {
       updateRaceDependentFields();
       applyRaceData();
     });
+
+    // --------------------------------
+    // ATTRIBUTE GROUP ROLLS (Body/Mind/Soul AVG)
+    // --------------------------------
+    html.on("click", ".roll-attribute-group, .roll-attribute", ev => {
+      ev.preventDefault();
+      const button = ev.currentTarget;
+
+      // Support both data-attr-group and data-attr
+      const groupKey =
+        button.dataset.attrGroup ||
+        button.dataset.attr;
+
+      if (!groupKey) return;
+
+      if (typeof this.actor.rollAttributeGroup === "function") {
+        this.actor.rollAttributeGroup(groupKey);
+      } else {
+        console.warn("MarkedActorSheet | rollAttributeGroup helper not found on actor.");
+      }
+    });
+
+    // --------------------------------
+    // SKILL ROLLS
+    //  - Buttons: .roll-skill data-skill="might.athletics" etc.
+    //  - We infer body/mind/soul from the surrounding tab.
+    // --------------------------------
+    html.on("click", ".roll-skill", ev => {
+      ev.preventDefault();
+      const button = ev.currentTarget;
+      let skillKey = button.dataset.skill;
+      if (!skillKey) return;
+
+      // If the skillKey is already fully qualified (body.* / mind.* / soul.*),
+      // just use it directly.
+      let fullPath = skillKey;
+
+      const alreadyQualified =
+        skillKey.startsWith("body.") ||
+        skillKey.startsWith("mind.") ||
+        skillKey.startsWith("soul.");
+
+      if (!alreadyQualified) {
+        // Determine which primary group we are in: body / mind / soul
+        let primary = null;
+
+        // Find closest tab wrapper
+        const bodyTab = button.closest('.tab[data-tab="body-skills"]');
+        const mindTab = button.closest('.tab[data-tab="mind-skills"]');
+        const soulTab = button.closest('.tab[data-tab="soul-skills"]');
+
+        if (bodyTab) primary = "body";
+        else if (mindTab) primary = "mind";
+        else if (soulTab) primary = "soul";
+
+        if (primary) {
+          fullPath = `${primary}.${skillKey}`;
+        }
+      }
+
+      if (typeof this.actor.rollSkill === "function") {
+        this.actor.rollSkill(fullPath);
+      } else {
+        console.warn("MarkedActorSheet | rollSkill helper not found on actor.");
+      }
+    });
   }
 }
-
