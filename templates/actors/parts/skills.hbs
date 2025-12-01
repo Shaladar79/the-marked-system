@@ -40,31 +40,23 @@
          MIND SKILLS
          ========================= --}}
     <div class="tab" data-group="skills-sub" data-tab="mind-skills">
-      <div class="skills-column">
+  <div class="skills-grid skills-grid-1col">
 
-        <details class="skills-block" open>
-          <summary><h3>Insight Skills</h3></summary>
-          <div class="skills-list skills-insight">
-            <em>TODO: Add Insight-based skills here.</em>
-          </div>
-        </details>
-
-        <details class="skills-block">
-          <summary><h3>Quickness Skills</h3></summary>
-          <div class="skills-list skills-quickness">
-            <em>TODO: Add Quickness-based skills here.</em>
-          </div>
-        </details>
-
-        <details class="skills-block">
-          <summary><h3>Willpower Skills</h3></summary>
-          <div class="skills-list skills-willpower">
-            <em>TODO: Add Willpower-based skills here.</em>
-          </div>
-        </details>
-
-      </div>
+    <div class="skills-block">
+      {{> "systems/the-marked-system/templates/actors/parts/skills/mind-insight.hbs"}}
     </div>
+
+    <div class="skills-block">
+      {{> "systems/the-marked-system/templates/actors/parts/skills/mind-quickness.hbs"}}
+    </div>
+
+    <div class="skills-block">
+      {{> "systems/the-marked-system/templates/actors/parts/skills/mind-willpower.hbs"}}
+    </div>
+
+  </div>
+</div>
+
 
     {{!-- =========================
          SOUL SKILLS
