@@ -55,78 +55,8 @@ export class MarkedActorSheet extends ActorSheet {
     return data;
   }
 
-  /* -------------------------------------------- */
-  /*  Listeners                                   */
-  /* -------------------------------------------- */
-
   activateListeners(html) {
     super.activateListeners(html);
-
-    // ============================
-//  UNIVERSAL ROLL HANDLER
-// ============================
-html.on("click", ".roll-any", ev => {
-  ev.preventDefault();
-
-  const button = ev.currentTarget;
-
-  const rollType = button.dataset.rolltype;     // "attribute" or "skill"
-  const path     = button.dataset.path;         // e.g. "body.might" or "skills.might.athletics"
-
-  let target = 0;
-
-  // -------------------------
-  // Determine target number
-  // -------------------------
-  if (rollType === "attribute") {
-    target = foundry.utils.getProperty(this.actor.system.attributes, path)?.value ?? 0;
-  }
-  else if (rollType === "skill") {
-    target = foundry.utils.getProperty(this.actor.system.skills, path)?.total ?? 0;
-  }
-
-  // -------------------------
-  // Perform the d100 roll
-  // -------------------------
-  const roll = new Roll("1d100").roll({async:false});
-  const value = roll.total;
-
-  // -------------------------
-  // Calculate DOS
-  // -------------------------
-  let DOS = 0;
-
-  // Critical fail / fail
-  if (value >= 95) {
-    DOS = 0;
-  }
-  else if (value <= 5) {
-    DOS = 4; // crit success = +4 successes
-  }
-  else if (value <= target) {
-    DOS = 1;
-    const margin = target - value;
-    DOS += Math.floor(margin / 15);
-  }
-
-  // -------------------------
-  // STORE THE RESULT
-  // -------------------------
-  this.actor.update({ "system.details.lastDOS": DOS });
-
-  // -------------------------
-  // CHAT MESSAGE
-  // -------------------------
-  roll.toMessage({
-    speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-    flavor: `
-      <b>${rollType === "attribute" ? "Attribute Roll" : "Skill Roll"}</b><br>
-      Target: ${target}<br>
-      Roll: ${value}<br>
-      <b>DOS: ${DOS}</b>
-    `
-  });
-});
 
     // --------------------------------
     // RACE-DEPENDENT EXTRA DROPDOWNS
@@ -135,6 +65,7 @@ html.on("click", ".roll-any", ev => {
     const tribeField = html.find(".tribe-field");
     const clanField  = html.find(".clan-field");
 
+    // Show/hide tribe & clan based on race key ("mythrian", "draconian")
     const updateRaceDependentFields = () => {
       const raceKey = raceSelect.val();
 
@@ -155,6 +86,7 @@ html.on("click", ".roll-any", ev => {
       }
     };
 
+    // Apply racial STATUS + ATTRIBUTE bonuses when race changes
     const applyRaceData = () => {
       const raceKey = raceSelect.val();
       if (!raceKey) return;
@@ -212,114 +144,249 @@ html.on("click", ".roll-any", ev => {
     });
 
     // --------------------------------
-    // ATTRIBUTE ROLLS (group + sub)
+    // ROLL HANDLERS
     // --------------------------------
-    html.on("click", ".roll-attribute", this._onAttributeRoll.bind(this));
-    html.on("click", ".roll-subattribute", this._onSubattributeRoll.bind(this));
+
+    // Attribute rolls (Body/Mind/Soul avg)
+    html.on("click", ".roll-attribute", (event) => this._onAttributeRoll(event));
+
+    // Sub-attribute rolls (Might, Swiftness, etc.)
+    html.on("click", ".roll-subattribute", (event) => this._onSubAttributeRoll(event));
+
+    // Skill rolls
+    html.on("click", ".roll-skill", (event) => this._onSkillRoll(event));
   }
 
-  /* -------------------------------------------- */
-  /*  Roll Helpers                                */
-  /* -------------------------------------------- */
+  // ============================
+  // ROLL HELPERS
+  // ============================
 
   /**
-   * Core percent-check logic:
-   * - target = attribute value
-   * - success on roll <= target
-   * - +1 success per full 15 under
-   * - 1–5 = crit success: +4 successes
-   * - 95–100 = auto-fail
+   * Generic roll evaluator: 1d100 vs TN
+   * - 95–100 = automatic failure
+   * - 1–5 = critical success (+4 successes)
+   * - Success if roll <= TN
+   * - +1 success per full 15 points under TN
    */
-  async _percentCheck(target, label, groupLabel = "") {
-    const tgt = Number(target ?? 0) || 0;
-
-    const roll = await new Roll("1d100").evaluate({ async: true });
-    const r = roll.total;
+  async _evaluateRoll(tn) {
+    const roll = await (new Roll("1d100")).evaluate({ async: true });
+    const total = roll.total;
 
     let successes = 0;
-    let outcome   = "Failure";
+    let isCrit = false;
+    let isFailure = false;
 
-    if (r >= 95) {
-      outcome = "Catastrophic Failure";
+    // Auto-fail band
+    if (total >= 95) {
+      isFailure = true;
       successes = 0;
     } else {
-      const diff = tgt - r;
-      if (diff >= 0) {
-        successes = 1 + Math.floor(diff / 15);
-
-        if (r <= 5) {
-          successes += 4;
-          outcome = "Critical Success";
-        } else {
-          outcome = "Success";
-        }
+      // Base success check
+      if (total <= tn) {
+        successes = 1 + Math.floor((tn - total) / 15);
       } else {
-        outcome = "Failure";
+        successes = 0;
+        isFailure = true;
       }
+
+      // Critical band (1–5 always crit, adds +4 successes)
+      if (total >= 1 && total <= 5) {
+        isCrit = true;
+        successes += 4;
+      }
+
+      // Guard: no negative successes
+      if (successes < 0) successes = 0;
     }
 
-    const speaker = ChatMessage.getSpeaker({ actor: this.actor });
+    // Store lastDOS on the actor (0 on failure)
+    await this.actor.setFlag("the-marked-system", "lastDOS", successes);
 
-    const flavorParts = [];
-    if (groupLabel) flavorParts.push(`<strong>${groupLabel}</strong>`);
-    if (label)      flavorParts.push(`<span>${label}</span>`);
+    return { roll, total, tn, successes, isCrit, isFailure };
+  }
 
-    const flavor = flavorParts.join(" – ");
+  /**
+   * Render and post chat card
+   */
+  async _postRollCard({ title, tn, total, successes, isCrit, isFailure, tags = [], roll }) {
+    const template = "systems/the-marked-system/templates/chat/roll-card.hbs";
 
-    const content = `
-      <div class="marked-roll-card">
-        <h3>${flavor}</h3>
-        <p><strong>Target:</strong> ${tgt}%</p>
-        <p><strong>Roll:</strong> ${r}</p>
-        <p><strong>Outcome:</strong> ${outcome}</p>
-        <p><strong>Successes:</strong> ${successes}</p>
-      </div>
-    `;
+    const data = {
+      title,
+      tn,
+      total,
+      successes,
+      isCrit,
+      isFailure,
+      tags
+    };
 
-    await ChatMessage.create({
-      speaker,
-      flavor: "Attribute Check",
-      content,
-      rolls: [roll]
+    const content = await renderTemplate(template, data);
+
+    return ChatMessage.create({
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+      roll,
+      content
     });
   }
 
-  /* -------------------------------------------- */
+  // ============================
+  // ATTRIBUTE ROLLS
+  // ============================
 
+  /**
+   * Roll Body/Mind/Soul using the AVG value as TN
+   */
   async _onAttributeRoll(event) {
     event.preventDefault();
-    const button  = event.currentTarget;
-    const groupKey = button.dataset.attr; // "body" | "mind" | "soul"
+    const button = event.currentTarget;
+    const attrKey = button.dataset.attr; // "body", "mind", "soul"
 
-    if (!groupKey) return;
+    const system = this.actor.system;
+    const attrGroup = system.attributes?.[attrKey];
+    if (!attrGroup) return;
 
-    const attrs = this.actor.system.attributes?.[groupKey];
-    if (!attrs) return;
+    const tn = Number(attrGroup.value ?? 0) || 0;
+    const label = attrGroup.label || attrKey;
 
-    const target = attrs.value ?? 0;
-    const label  = `${attrs.label ?? groupKey} AVG`;
+    const { roll, total, successes, isCrit, isFailure } = await this._evaluateRoll(tn);
 
-    return this._percentCheck(target, label, "Attribute Group");
+    await this._postRollCard({
+      title: `${label} Check`,
+      tn,
+      total,
+      successes,
+      isCrit,
+      isFailure,
+      tags: [], // no trained/exp tags on raw attribute
+      roll
+    });
   }
 
-  async _onSubattributeRoll(event) {
+  /**
+   * Roll a sub-attribute (Might, Swiftness, etc.) using its value as TN
+   * Expected data-subattr on the button: "body.might", "mind.insight", etc.
+   */
+  async _onSubAttributeRoll(event) {
     event.preventDefault();
     const button = event.currentTarget;
-    const path   = button.dataset.subattr; // e.g. "body.might"
+    const subAttrPath = button.dataset.subattr;   // e.g. "body.might"
+    if (!subAttrPath) return;
 
-    if (!path) return;
-
-    const [groupKey, subKey] = path.split(".");
-    const group = this.actor.system.attributes?.[groupKey];
+    const [groupKey, subKey] = subAttrPath.split(".");
+    const system = this.actor.system;
+    const group = system.attributes?.[groupKey];
     if (!group) return;
 
-    const sub = group[subKey];
-    if (!sub) return;
+    const subAttr = group[subKey];
+    if (!subAttr) return;
 
-    const target = sub.value ?? 0;
-    const label  = sub.label ?? subKey;
-    const groupLabel = group.label ?? groupKey;
+    const tn = Number(subAttr.value ?? 0) || 0;
+    const label = `${subAttr.label || subKey} (${group.label || groupKey})`;
 
-    return this._percentCheck(target, label, groupLabel);
+    const { roll, total, successes, isCrit, isFailure } = await this._evaluateRoll(tn);
+
+    await this._postRollCard({
+      title: `${label} Check`,
+      tn,
+      total,
+      successes,
+      isCrit,
+      isFailure,
+      tags: [], // still just a raw sub-attribute
+      roll
+    });
+  }
+
+  // ============================
+  // SKILL ROLLS
+  // ============================
+
+  /**
+   * Skill roll:
+   * - TN starts from sub-attribute value
+   * - If trained: +5, tag "Trained"
+   * - If untrained: -10, tag "Untrained"
+   * - If sub-attribute expertise: +3, tag "Expertise"
+   * - Prompt for Specialty: if yes, +3, tag "Specialty"
+   *
+   * Expected data-skill: "body.might.athletics", "mind.insight.lore", etc.
+   */
+  async _onSkillRoll(event) {
+    event.preventDefault();
+    const button = event.currentTarget;
+    const skillPath = button.dataset.skill; // e.g. "body.might.athletics"
+
+    if (!skillPath) return;
+
+    const [attrGroupKey, subAttrKey, skillKey] = skillPath.split(".");
+    const system = this.actor.system;
+
+    const attrs = system.attributes?.[attrGroupKey];
+    if (!attrs) return;
+
+    const subAttr = attrs[subAttrKey];
+    if (!subAttr) return;
+
+    const skillsRoot = system.skills?.[attrGroupKey]?.[subAttrKey];
+    if (!skillsRoot) return;
+
+    const skillData = skillsRoot[skillKey];
+    if (!skillData) return;
+
+    let tn = Number(subAttr.value ?? 0) || 0;
+    const tags = [];
+
+    // Trained vs Untrained
+    const trained = !!skillData.trained;
+    if (trained) {
+      tn += 5;
+      tags.push("Trained");
+    } else {
+      tn -= 10;
+      tags.push("Untrained");
+    }
+
+    // Expertise from the sub-attribute skill group
+    const expertise = !!skillsRoot.expertise;
+    if (expertise) {
+      tn += 3;
+      tags.push("Expertise");
+    }
+
+    // Temporary prompt for Specialty use
+    let useSpecialty = false;
+    await Dialog.prompt({
+      title: "Specialty Roll?",
+      content: `<p>Is this a <strong>Specialty</strong> use of ${skillData.label}?</p>`,
+      label: "Yes",
+      callback: (html) => {
+        // If they accept the dialog, treat as "Yes"
+        useSpecialty = true;
+      },
+      rejectClose: true
+    }).catch(() => { /* cancelled */ });
+
+    if (useSpecialty) {
+      tn += 3;
+      tags.push("Specialty");
+    }
+
+    const title = `${skillData.label} (${subAttr.label || subAttrKey})`;
+
+    const { roll, total, successes, isCrit, isFailure } = await this._evaluateRoll(tn);
+
+    await this._postRollCard({
+      title,
+      tn,
+      total,
+      successes,
+      isCrit,
+      isFailure,
+      tags,
+      roll
+    });
   }
 }
