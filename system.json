@@ -11,10 +11,12 @@
       "name": "Shaladar"
     }
   ],
+
   "compatibility": {
     "minimum": "13",
     "verified": "13"
   },
+
   "esmodules": ["system.mjs"],
   "styles": ["styles.css"],
   "languages": [
