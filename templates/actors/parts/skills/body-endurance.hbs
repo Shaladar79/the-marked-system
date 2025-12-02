@@ -2,7 +2,6 @@
 
 <section class="attribute-skill-block">
 
-  {{!-- ENDURANCE HEADER ROW --}}
   <div class="attribute-header flexrow">
     <div class="attr-main">
       <label>Endurance</label>
@@ -19,15 +18,14 @@
         Expertise
       </label>
 
-      <button type="button"
-              class="roll-attribute"
-              data-attr="body.endurance">
+      <button class="roll-any"
+              data-rolltype="attribute"
+              data-path="body.endurance">
         🎲
       </button>
     </div>
   </div>
 
-  {{!-- ENDURANCE SKILLS TABLE --}}
   <table class="skill-table">
     <thead>
       <tr>
@@ -58,9 +56,9 @@
           {{system.skills.body.endurance.fortitude.total}}
         </td>
         <td>
-          <button type="button"
-                  class="roll-skill"
-                  data-skill="body.endurance.fortitude">
+          <button class="roll-any"
+                  data-rolltype="skill"
+                  data-path="body.endurance.fortitude">
             🎲
           </button>
         </td>
@@ -83,9 +81,9 @@
           {{system.skills.body.endurance.painTolerance.total}}
         </td>
         <td>
-          <button type="button"
-                  class="roll-skill"
-                  data-skill="body.endurance.painTolerance">
+          <button class="roll-any"
+                  data-rolltype="skill"
+                  data-path="body.endurance.painTolerance">
             🎲
           </button>
         </td>
