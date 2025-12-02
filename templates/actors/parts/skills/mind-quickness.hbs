@@ -2,173 +2,169 @@
 
 <section class="attribute-skill-block">
 
-  <details class="attr-collapse" open>
-    <summary>
-      <div class="attribute-header flexrow">
-        <div class="attr-main">
-          <label>Quickness</label>
-          <span class="attr-value">
-            {{system.attributes.mind.quickness.value}}%
-          </span>
-        </div>
+  <div class="attribute-header flexrow">
+    <div class="attr-main">
+      <label>Quickness</label>
+      <span class="attr-value">
+        {{system.attributes.mind.quickness.value}}%
+      </span>
+    </div>
 
-        <div class="attr-controls">
-          <label class="checkbox">
-            <input type="checkbox"
-                   name="system.skills.mind.quickness.expertise"
-                   {{checked system.skills.mind.quickness.expertise}} />
-            Expertise
-          </label>
+    <div class="attr-controls">
+      <label class="checkbox">
+        <input type="checkbox"
+               name="system.skills.mind.quickness.expertise"
+               {{checked system.skills.mind.quickness.expertise}} />
+        Expertise
+      </label>
 
-          <button type="button"
-                  class="roll-attribute"
-                  data-attr="mind.quickness">
+      <button class="roll-any"
+              data-rolltype="attribute"
+              data-path="mind.quickness">
+        🎲
+      </button>
+    </div>
+  </div>
+
+  <table class="skill-table">
+    <thead>
+      <tr>
+        <th>Skill</th>
+        <th>Trained</th>
+        <th>Specialty</th>
+        <th>Total&nbsp;%</th>
+        <th>Roll</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      {{!-- Tactics --}}
+      <tr>
+        <td>Tactics</td>
+        <td>
+          <input type="checkbox"
+                 name="system.skills.mind.quickness.tactics.trained"
+                 {{checked system.skills.mind.quickness.tactics.trained}} />
+        </td>
+        <td>
+          <input type="text"
+                 name="system.skills.mind.quickness.tactics.specialty"
+                 value="{{system.skills.mind.quickness.tactics.specialty}}" />
+        </td>
+        <td>
+          {{system.skills.mind.quickness.tactics.total}}
+        </td>
+        <td>
+          <button class="roll-any"
+                  data-rolltype="skill"
+                  data-path="mind.quickness.tactics">
             🎲
           </button>
-        </div>
-      </div>
-    </summary>
+        </td>
+      </tr>
 
-    <table class="skill-table">
-      <thead>
-        <tr>
-          <th>Skill</th>
-          <th>Trained</th>
-          <th>Specialty</th>
-          <th>Total&nbsp;%</th>
-          <th>Roll</th>
-        </tr>
-      </thead>
+      {{!-- Research --}}
+      <tr>
+        <td>Research</td>
+        <td>
+          <input type="checkbox"
+                 name="system.skills.mind.quickness.research.trained"
+                 {{checked system.skills.mind.quickness.research.trained}} />
+        </td>
+        <td>
+          <input type="text"
+                 name="system.skills.mind.quickness.research.specialty"
+                 value="{{system.skills.mind.quickness.research.specialty}}" />
+        </td>
+        <td>
+          {{system.skills.mind.quickness.research.total}}
+        </td>
+        <td>
+          <button class="roll-any"
+                  data-rolltype="skill"
+                  data-path="mind.quickness.research">
+            🎲
+          </button>
+        </td>
+      </tr>
 
-      <tbody>
+      {{!-- Logic --}}
+      <tr>
+        <td>Logic</td>
+        <td>
+          <input type="checkbox"
+                 name="system.skills.mind.quickness.logic.trained"
+                 {{checked system.skills.mind.quickness.logic.trained}} />
+        </td>
+        <td>
+          <input type="text"
+                 name="system.skills.mind.quickness.logic.specialty"
+                 value="{{system.skills.mind.quickness.logic.specialty}}" />
+        </td>
+        <td>
+          {{system.skills.mind.quickness.logic.total}}
+        </td>
+        <td>
+          <button class="roll-any"
+                  data-rolltype="skill"
+                  data-path="mind.quickness.logic">
+            🎲
+          </button>
+        </td>
+      </tr>
 
-        {{!-- Tactics --}}
-        <tr>
-          <td>Tactics</td>
-          <td>
-            <input type="checkbox"
-                   name="system.skills.mind.quickness.tactics.trained"
-                   {{checked system.skills.mind.quickness.tactics.trained}} />
-          </td>
-          <td>
-            <input type="text"
-                   name="system.skills.mind.quickness.tactics.specialty"
-                   value="{{system.skills.mind.quickness.tactics.specialty}}" />
-          </td>
-          <td>
-            {{system.skills.mind.quickness.tactics.total}}
-          </td>
-          <td>
-            <button type="button"
-                    class="roll-skill"
-                    data-skill="mind.quickness.tactics">
-              🎲
-            </button>
-          </td>
-        </tr>
+      {{!-- Use Magic Device --}}
+      <tr>
+        <td>Use Magic Device</td>
+        <td>
+          <input type="checkbox"
+                 name="system.skills.mind.quickness.useMagicDevice.trained"
+                 {{checked system.skills.mind.quickness.useMagicDevice.trained}} />
+        </td>
+        <td>
+          <input type="text"
+                 name="system.skills.mind.quickness.useMagicDevice.specialty"
+                 value="{{system.skills.mind.quickness.useMagicDevice.specialty}}" />
+        </td>
+        <td>
+          {{system.skills.mind.quickness.useMagicDevice.total}}
+        </td>
+        <td>
+          <button class="roll-any"
+                  data-rolltype="skill"
+                  data-path="mind.quickness.useMagicDevice">
+            🎲
+          </button>
+        </td>
+      </tr>
 
-        {{!-- Research --}}
-        <tr>
-          <td>Research</td>
-          <td>
-            <input type="checkbox"
-                   name="system.skills.mind.quickness.research.trained"
-                   {{checked system.skills.mind.quickness.research.trained}} />
-          </td>
-          <td>
-            <input type="text"
-                   name="system.skills.mind.quickness.research.specialty"
-                   value="{{system.skills.mind.quickness.research.specialty}}" />
-          </td>
-          <td>
-            {{system.skills.mind.quickness.research.total}}
-          </td>
-          <td>
-            <button type="button"
-                    class="roll-skill"
-                    data-skill="mind.quickness.research">
-              🎲
-            </button>
-          </td>
-        </tr>
+      {{!-- Combat: Wands --}}
+      <tr>
+        <td>Combat: Wands</td>
+        <td>
+          <input type="checkbox"
+                 name="system.skills.mind.quickness.combatWands.trained"
+                 {{checked system.skills.mind.quickness.combatWands.trained}} />
+        </td>
+        <td>
+          <input type="text"
+                 name="system.skills.mind.quickness.combatWands.specialty"
+                 value="{{system.skills.mind.quickness.combatWands.specialty}}" />
+        </td>
+        <td>
+          {{system.skills.mind.quickness.combatWands.total}}
+        </td>
+        <td>
+          <button class="roll-any"
+                  data-rolltype="skill"
+                  data-path="mind.quickness.combatWands">
+            🎲
+          </button>
+        </td>
+      </tr>
 
-        {{!-- Logic --}}
-        <tr>
-          <td>Logic</td>
-          <td>
-            <input type="checkbox"
-                   name="system.skills.mind.quickness.logic.trained"
-                   {{checked system.skills.mind.quickness.logic.trained}} />
-          </td>
-          <td>
-            <input type="text"
-                   name="system.skills.mind.quickness.logic.specialty"
-                   value="{{system.skills.mind.quickness.logic.specialty}}" />
-          </td>
-          <td>
-            {{system.skills.mind.quickness.logic.total}}
-          </td>
-          <td>
-            <button type="button"
-                    class="roll-skill"
-                    data-skill="mind.quickness.logic">
-              🎲
-            </button>
-          </td>
-        </tr>
+    </tbody>
+  </table>
 
-        {{!-- Use Magic Device --}}
-        <tr>
-          <td>Use Magic Device</td>
-          <td>
-            <input type="checkbox"
-                   name="system.skills.mind.quickness.useMagicDevice.trained"
-                   {{checked system.skills.mind.quickness.useMagicDevice.trained}} />
-          </td>
-          <td>
-            <input type="text"
-                   name="system.skills.mind.quickness.useMagicDevice.specialty"
-                   value="{{system.skills.mind.quickness.useMagicDevice.specialty}}" />
-          </td>
-          <td>
-            {{system.skills.mind.quickness.useMagicDevice.total}}
-          </td>
-          <td>
-            <button type="button"
-                    class="roll-skill"
-                    data-skill="mind.quickness.useMagicDevice">
-              🎲
-            </button>
-          </td>
-        </tr>
-
-        {{!-- Combat: Wands --}}
-        <tr>
-          <td>Combat: Wands</td>
-          <td>
-            <input type="checkbox"
-                   name="system.skills.mind.quickness.combatWands.trained"
-                   {{checked system.skills.mind.quickness.combatWands.trained}} />
-          </td>
-          <td>
-            <input type="text"
-                   name="system.skills.mind.quickness.combatWands.specialty"
-                   value="{{system.skills.mind.quickness.combatWands.specialty}}" />
-          </td>
-          <td>
-            {{system.skills.mind.quickness.combatWands.total}}
-          </td>
-          <td>
-            <button type="button"
-                    class="roll-skill"
-                    data-skill="mind.quickness.combatWands">
-              🎲
-            </button>
-          </td>
-        </tr>
-
-      </tbody>
-    </table>
-
-  </details>
 </section>
