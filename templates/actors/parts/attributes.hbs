@@ -14,6 +14,7 @@
         {{system.attributes.body.label}}
       </header>
 
+      {{!-- Body AVG + group roll --}}
       <div class="attr-row primary-attr flexrow">
         <div class="attr-main">
           <label>Body AVG</label>
@@ -28,33 +29,63 @@
         <button type="button"
                 class="roll-attribute"
                 data-attr="body"
-                title="Roll Body Attribute">
+                title="Roll Body">
           🎲
         </button>
       </div>
 
-      <div class="attr-row">
-        <label>{{system.attributes.body.might.label}}</label>
-        <input type="number"
-               name="system.attributes.body.might.value"
-               data-dtype="Number"
-               value="{{system.attributes.body.might.value}}" />
+      {{!-- Might --}}
+      <div class="attr-row flexrow">
+        <div class="attr-main">
+          <label>{{system.attributes.body.might.label}}</label>
+          <input type="number"
+                 name="system.attributes.body.might.value"
+                 data-dtype="Number"
+                 value="{{system.attributes.body.might.value}}" />
+        </div>
+
+        <button type="button"
+                class="roll-subattribute"
+                data-subattr="body.might"
+                title="Roll Might">
+          🎲
+        </button>
       </div>
 
-      <div class="attr-row">
-        <label>{{system.attributes.body.swiftness.label}}</label>
-        <input type="number"
-               name="system.attributes.body.swiftness.value"
-               data-dtype="Number"
-               value="{{system.attributes.body.swiftness.value}}" />
+      {{!-- Swiftness --}}
+      <div class="attr-row flexrow">
+        <div class="attr-main">
+          <label>{{system.attributes.body.swiftness.label}}</label>
+          <input type="number"
+                 name="system.attributes.body.swiftness.value"
+                 data-dtype="Number"
+                 value="{{system.attributes.body.swiftness.value}}" />
+        </div>
+
+        <button type="button"
+                class="roll-subattribute"
+                data-subattr="body.swiftness"
+                title="Roll Swiftness">
+          🎲
+        </button>
       </div>
 
-      <div class="attr-row">
-        <label>{{system.attributes.body.endurance.label}}</label>
-        <input type="number"
-               name="system.attributes.body.endurance.value"
-               data-dtype="Number"
-               value="{{system.attributes.body.endurance.value}}" />
+      {{!-- Endurance --}}
+      <div class="attr-row flexrow">
+        <div class="attr-main">
+          <label>{{system.attributes.body.endurance.label}}</label>
+          <input type="number"
+                 name="system.attributes.body.endurance.value"
+                 data-dtype="Number"
+                 value="{{system.attributes.body.endurance.value}}" />
+        </div>
+
+        <button type="button"
+                class="roll-subattribute"
+                data-subattr="body.endurance"
+                title="Roll Endurance">
+          🎲
+        </button>
       </div>
     </div>
 
@@ -67,6 +98,7 @@
         {{system.attributes.mind.label}}
       </header>
 
+      {{!-- Mind AVG + group roll --}}
       <div class="attr-row primary-attr flexrow">
         <div class="attr-main">
           <label>Mind AVG</label>
@@ -81,33 +113,63 @@
         <button type="button"
                 class="roll-attribute"
                 data-attr="mind"
-                title="Roll Mind Attribute">
+                title="Roll Mind">
           🎲
         </button>
       </div>
 
-      <div class="attr-row">
-        <label>{{system.attributes.mind.insight.label}}</label>
-        <input type="number"
-               name="system.attributes.mind.insight.value"
-               data-dtype="Number"
-               value="{{system.attributes.mind.insight.value}}" />
+      {{!-- Insight --}}
+      <div class="attr-row flexrow">
+        <div class="attr-main">
+          <label>{{system.attributes.mind.insight.label}}</label>
+          <input type="number"
+                 name="system.attributes.mind.insight.value"
+                 data-dtype="Number"
+                 value="{{system.attributes.mind.insight.value}}" />
+        </div>
+
+        <button type="button"
+                class="roll-subattribute"
+                data-subattr="mind.insight"
+                title="Roll Insight">
+          🎲
+        </button>
       </div>
 
-      <div class="attr-row">
-        <label>{{system.attributes.mind.quickness.label}}</label>
-        <input type="number"
-               name="system.attributes.mind.quickness.value"
-               data-dtype="Number"
-               value="{{system.attributes.mind.quickness.value}}" />
+      {{!-- Quickness --}}
+      <div class="attr-row flexrow">
+        <div class="attr-main">
+          <label>{{system.attributes.mind.quickness.label}}</label>
+          <input type="number"
+                 name="system.attributes.mind.quickness.value"
+                 data-dtype="Number"
+                 value="{{system.attributes.mind.quickness.value}}" />
+        </div>
+
+        <button type="button"
+                class="roll-subattribute"
+                data-subattr="mind.quickness"
+                title="Roll Quickness">
+          🎲
+        </button>
       </div>
 
-      <div class="attr-row">
-        <label>{{system.attributes.mind.willpower.label}}</label>
-        <input type="number"
-               name="system.attributes.mind.willpower.value"
-               data-dtype="Number"
-               value="{{system.attributes.mind.willpower.value}}" />
+      {{!-- Willpower --}}
+      <div class="attr-row flexrow">
+        <div class="attr-main">
+          <label>{{system.attributes.mind.willpower.label}}</label>
+          <input type="number"
+                 name="system.attributes.mind.willpower.value"
+                 data-dtype="Number"
+                 value="{{system.attributes.mind.willpower.value}}" />
+        </div>
+
+        <button type="button"
+                class="roll-subattribute"
+                data-subattr="mind.willpower"
+                title="Roll Willpower">
+          🎲
+        </button>
       </div>
     </div>
 
@@ -120,6 +182,7 @@
         {{system.attributes.soul.label}}
       </header>
 
+      {{!-- Soul AVG + group roll --}}
       <div class="attr-row primary-attr flexrow">
         <div class="attr-main">
           <label>Soul AVG</label>
@@ -134,33 +197,63 @@
         <button type="button"
                 class="roll-attribute"
                 data-attr="soul"
-                title="Roll Soul Attribute">
+                title="Roll Soul">
           🎲
         </button>
       </div>
 
-      <div class="attr-row">
-        <label>{{system.attributes.soul.presence.label}}</label>
-        <input type="number"
-               name="system.attributes.soul.presence.value"
-               data-dtype="Number"
-               value="{{system.attributes.soul.presence.value}}" />
+      {{!-- Presence --}}
+      <div class="attr-row flexrow">
+        <div class="attr-main">
+          <label>{{system.attributes.soul.presence.label}}</label>
+          <input type="number"
+                 name="system.attributes.soul.presence.value"
+                 data-dtype="Number"
+                 value="{{system.attributes.soul.presence.value}}" />
+        </div>
+
+        <button type="button"
+                class="roll-subattribute"
+                data-subattr="soul.presence"
+                title="Roll Presence">
+          🎲
+        </button>
       </div>
 
-      <div class="attr-row">
-        <label>{{system.attributes.soul.grace.label}}</label>
-        <input type="number"
-               name="system.attributes.soul.grace.value"
-               data-dtype="Number"
-               value="{{system.attributes.soul.grace.value}}" />
+      {{!-- Grace --}}
+      <div class="attr-row flexrow">
+        <div class="attr-main">
+          <label>{{system.attributes.soul.grace.label}}</label>
+          <input type="number"
+                 name="system.attributes.soul.grace.value"
+                 data-dtype="Number"
+                 value="{{system.attributes.soul.grace.value}}" />
+        </div>
+
+        <button type="button"
+                class="roll-subattribute"
+                data-subattr="soul.grace"
+                title="Roll Grace">
+          🎲
+        </button>
       </div>
 
-      <div class="attr-row">
-        <label>{{system.attributes.soul.resolve.label}}</label>
-        <input type="number"
-               name="system.attributes.soul.resolve.value"
-               data-dtype="Number"
-               value="{{system.attributes.soul.resolve.value}}" />
+      {{!-- Resolve --}}
+      <div class="attr-row flexrow">
+        <div class="attr-main">
+          <label>{{system.attributes.soul.resolve.label}}</label>
+          <input type="number"
+                 name="system.attributes.soul.resolve.value"
+                 data-dtype="Number"
+                 value="{{system.attributes.soul.resolve.value}}" />
+        </div>
+
+        <button type="button"
+                class="roll-subattribute"
+                data-subattr="soul.resolve"
+                title="Roll Resolve">
+          🎲
+        </button>
       </div>
     </div>
 
