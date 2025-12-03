@@ -35,5 +35,6 @@
   },
   "url": "https://github.com/Shaladar79/the-marked-system",
   "manifest": "https://raw.githubusercontent.com/Shaladar79/the-marked-system/main/system.json",
-  "download": "https://github.com/Shaladar79/the-marked-system/archive/refs/heads/main.zip"
+  "download": "https://github.com/Shaladar79/the-marked-system/releases/latest/download/the-marked-system.zip"
+
 }
